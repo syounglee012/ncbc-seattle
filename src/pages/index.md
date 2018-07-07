@@ -1,5 +1,4 @@
-# Welcome!
-
-New Covenant Baptist Church is committed to following the Word of God and sharing the love of Jesus Christ. Find out what we're about, and come and see how exciting the love of Christ can be! We encourage you to check out our weekly Sunday Worship Service at the University Lutheran Church located just a few blocks north of the University of Washington.
-
-NCBC adheres to the Statement of Faith adopted by the Southern Baptist Convention.
+---
+title: New Covenant Baptist Church
+---
+Lorem ipsum dolor amet cred affogato hell of selfies knausgaard whatever cold-pressed banh mi flannel cornhole kombucha. Affogato before they sold out wolf cronut pabst venmo banh mi poke cold-pressed deep v squid DIY mixtape. Put a bird on it stumptown selfies wolf try-hard church-key godard normcore freegan af. Mustache 90's photo booth trust fund disrupt before they sold out actually cronut whatever kitsch yuccie. Man bun edison bulb slow-carb vegan cornhole blog. Thundercats quinoa affogato vexillologist, fashion axe iPhone hexagon biodiesel actually salvia jean shorts. Health goth pickled etsy pok pok pinterest, +1 roof party glossier waistcoat tumblr.
