@@ -2,7 +2,7 @@
   "name": "new-covenant-baptist-church",
   "description": "New Covenant Baptist Church Website",
   "version": "1.0.0",
-  "author": "Jin Pae <wikidlog@gmail.com>",
+  "author": "Jin Pae",
   "dependencies": {
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",

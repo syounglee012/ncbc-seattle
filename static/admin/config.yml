@@ -1,16 +1,46 @@
 backend:
   name: git-gateway
+  branch: master
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+  - name: pages
+    label: Pages
+    files:
+      - file: src/pages/index.md
+        label: Home
+        name: home
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: src/pages/about/index.md
+        label: About
+        name: about
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: src/pages/ministries/index.md
+        label: Ministries
+        name: ministries
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ministries"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: src/pages/directions/index.md
+        label: Directions
+        name: directions
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "directions"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: src/pages/contact/index.md
+        label: Contact
+        name: contact
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
