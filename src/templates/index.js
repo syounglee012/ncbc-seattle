@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AboutPage = ({ data }) => {
+const IndexPage = ({ data }) => {
   const { markdownRemark: page } = data;
   const { frontmatter, html } = page;
 
@@ -18,14 +18,14 @@ const AboutPage = ({ data }) => {
   );
 };
 
-AboutPage.propTypes = {
+IndexPage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default AboutPage;
+export default IndexPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const indexPageQuery = graphql`
+  query IndexPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

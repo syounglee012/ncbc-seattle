@@ -1,5 +1,7 @@
 ---
 title: Who We Are
+templateKey: about
+path: /about
 ---
 In 1997 a small team, led by Pastor Stephen and Ellen Jung, moved to Seattle with the vision to share the Gospel with college students and working professionals in the Puget Sound area. What started out as a small group of founding members has become an enlarged family of new brothers and sisters in Christ, who together strive to live out Jesus' Great Commandment - to love God and love one another - as well as His Great Commission - to make disciples of all nations.
 
