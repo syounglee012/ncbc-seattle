@@ -16,7 +16,10 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home"}
           - {label: "Path", name: "path", widget: "hidden", default: "/"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Main", name: "main", widget: "markdown"}
+          - {label: "Welcome Message", name: "welcomeMessage", widget: "markdown"}
+          - {label: "Worship Service Info", name: "worshipServiceInfo", widget: "markdown"}
+          - {label: "Key Verse", name: "keyVerse", widget: "markdown"}
       - file: src/pages/about/index.md
         label: About
         name: about
