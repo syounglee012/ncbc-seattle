@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Nav from '../Nav/Nav';
 
-import style from './Header.scss';
+import styles from './Header.module.scss';
 
 const Header = ({ siteTitle }) => (
-  <header className={style.component}>
+  <header className={styles.component}>
     <Link to="/">{siteTitle}</Link>
     <Nav />
   </header>
