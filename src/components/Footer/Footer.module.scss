@@ -1,0 +1,23 @@
+:local {
+  .component {
+  }
+
+  .brandContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .brandName {
+    margin-left: 12px;
+  }
+
+  .logo {
+    width: 64px;
+    height: 100%;
+    margin: 0;
+  }
+
+  .socialLinkIcon {
+    width: 32px;
+  }
+}

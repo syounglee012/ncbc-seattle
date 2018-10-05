@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 
 import Header from '../components/Header/Header';
 import './index.css';
+import Footer from '../components/Footer/Footer';
 
 const Layout = ({ children, data }) => (
   <div>
@@ -25,6 +26,12 @@ const Layout = ({ children, data }) => (
     >
       {children()}
     </div>
+    <Footer
+      address={data.site.siteMetadata.address}
+      phone={data.site.siteMetadata.phone}
+      email={data.site.siteMetadata.email}
+      instagram={data.site.siteMetadata.instagram}
+    />
   </div>
 );
 
@@ -35,10 +42,21 @@ Layout.propTypes = {
 export default Layout;
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query SiteMetadataQuery {
     site {
       siteMetadata {
-        title
+        title,
+        address {
+          name,
+          streetAddress,
+          unit,
+          city,
+          state,
+          zipCode
+        }
+        phone,
+        email,
+        instagram
       }
     }
   }
