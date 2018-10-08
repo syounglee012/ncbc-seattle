@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DirectionsPage = ({ data }) => {
+const LocationPage = ({ data }) => {
   const { markdownRemark: page } = data;
   const { frontmatter, html } = page;
 
@@ -18,14 +18,14 @@ const DirectionsPage = ({ data }) => {
   );
 };
 
-DirectionsPage.propTypes = {
+LocationPage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default DirectionsPage;
+export default LocationPage;
 
-export const directionsPageQuery = graphql`
-  query DirectionsPage($id: String!) {
+export const LocationPageQuery = graphql`
+  query LocationPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

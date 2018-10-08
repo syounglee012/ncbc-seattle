@@ -16,10 +16,7 @@ const Nav = () => (
         <Link to="/devotional/">Devotional</Link>
       </li>
       <li className={styles.navItem}>
-        <Link to="/directions/">Directions</Link>
-      </li>
-      <li className={styles.navItem}>
-        <Link to="/contact/">Contact</Link>
+        <Link to="/location/">Location</Link>
       </li>
     </ul>
   </nav>

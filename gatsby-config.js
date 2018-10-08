@@ -11,6 +11,7 @@ module.exports = {
     },
     phone: '(206) 240-9648',
     email: 'ncbcseattle@gmail.com',
+    serviceTime: '12:30',
     instagram: 'ncbcseattle'
   },
   plugins: [
