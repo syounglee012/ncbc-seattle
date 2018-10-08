@@ -17,7 +17,7 @@ collections:
           - {label: "Path", name: "path", widget: "hidden", default: "/"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Main", name: "main", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Lead", name: "lead", widget: "string"}]}
-          - {label: "Intro", name: "intro", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
+          - {label: "Intro", name: "intro", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
           - {label: "Worship Service Info", name: "worshipServiceInfo", widget: "object", fields:[{label: "Heading", name: "heading", widget: "string"}, {label: "Time", name: "time", widget: "string"}, {label: "Location", name: "location", widget: "string"}, {label: "Room", name: "room", widget: "string"}, {label: "Street Address", name: "streetAddress", widget: "string"}, {label: "City", name: "city", widget: "string"}, {label: "State", name: "state", widget: "string"}, {label: "Zip Code", name: "zipCode", widget: "string"}]}
           - {label: "Key Verse", name: "keyVerse", widget: "object", fields: [{label: "Verse", name: "verse", widget: "text"}, {label: "Reference", name: "reference", widget: "string"}]}
       - file: src/pages/about/index.md
@@ -27,9 +27,9 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
           - {label: "Path", name: "path", widget: "hidden", default: "/about"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Who We Are", name: "whoWeAre", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
-          - {label: "Core Values", name: "coreValues", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
-          - {label: "Pastor", name: "pastor", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
+          - {label: "Who We Are", name: "whoWeAre", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
+          - {label: "Core Values", name: "coreValues", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
+          - {label: "Pastor", name: "pastor", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
       - file: src/pages/ministries/index.md
         label: Ministries
         name: ministries
@@ -37,9 +37,9 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ministries"}
           - {label: "Path", name: "path", widget: "hidden", default: "/ministries"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Young Adult", name: "youngAdult", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
-          - {label: "College", name: "college", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
-          - {label: "Children", name: "children", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
+          - {label: "Young Adult", name: "youngAdult", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
+          - {label: "College", name: "college", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
+          - {label: "Children", name: "children", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "markdown"}]}
       - file: src/pages/location/index.md
         label: Location
         name: location
@@ -47,4 +47,4 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "location"}
           - {label: "Path", name: "path", widget: "hidden", default: "/location"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Content", name: "content", widget: "markdown"}
