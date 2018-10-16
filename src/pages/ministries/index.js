@@ -42,6 +42,7 @@ export const ministriesPageQuery = graphql`
           frontmatter {
             templateKey
             title
+            navLinkText
             index
           }
         }

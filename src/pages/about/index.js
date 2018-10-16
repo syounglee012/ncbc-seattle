@@ -42,6 +42,7 @@ export const aboutPageQuery = graphql`
           frontmatter {
             templateKey
             title
+            navLinkText
             index
           }
         }
