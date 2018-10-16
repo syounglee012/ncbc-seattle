@@ -12,7 +12,7 @@ export const AboutPageTemplate = ({ pages, title, content }) => (
       {pages.map(({ node: page }) => (
         <li key={page.id}>
           <Link to={page.fields.slug}>
-            {page.frontmatter.title}
+            {page.frontmatter.navLinkText}
           </Link>
         </li>
       ))}
@@ -84,8 +84,9 @@ export const aboutPageQuery = graphql`
             slug
           }
           frontmatter {
-            title
             templateKey
+            title
+            navLinkText
             index
           }
         }

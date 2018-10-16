@@ -1,6 +1,7 @@
 ---
 templateKey: ministries
 title: College
+navLinkText: College
 index: 2
 ---
 Koinonia Fellowship, formerly known as Asian Student Koinonia (ASK), is a multiethnic Christian campus group at the University of Washington. Here at Koinonia Fellowship, you will find our members coming from a variety of backgrounds and ethnicities. So what is koinonia? Koinonia is Greek for "Christian fellowship," and sure enough we do a lot of that, through playing sports together, eating together, and of course, studying the Bible together.

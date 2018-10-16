@@ -1,6 +1,7 @@
 ---
 templateKey: about
 title: Our Core Values
+navLinkText: Our Core Values
 index: 2
 ---
 ### The Word of God
