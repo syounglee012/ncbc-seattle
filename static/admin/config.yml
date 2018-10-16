@@ -12,7 +12,17 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
-      - {label: "Index", name: "index", widget: "number", valueType: "int", min: 0, default: 0}
+      - {label: "Index", name: "index", widget: "number", valueType: "int", min: 1, default: 1}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  
+  - name: ministries
+    label: Ministries
+    folder: src/pages/ministries
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "minitries"}
+      - {label: "Index", name: "index", widget: "number", default: "int", min: 1, default: 1}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 

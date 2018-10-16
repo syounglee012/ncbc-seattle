@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AboutPageTemplate } from '../../templates/about';
+import { MinistriesPageTemplate } from '../../templates/ministries';
 
-const AboutIndexPage = ({ data }) => {
+const MinistriesIndexPage = ({ data }) => {
   const { edges: pages } = data.allMarkdownRemark;
   const firstPage = pages[0].node;
   const { frontmatter: { title }, html } = firstPage;
 
   return (
-    <AboutPageTemplate
+    <MinistriesPageTemplate
       pages={pages}
       title={title}
       content={html}
@@ -16,7 +16,7 @@ const AboutIndexPage = ({ data }) => {
   );
 };
 
-AboutIndexPage.propTypes = {
+MinistriesIndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
@@ -24,13 +24,13 @@ AboutIndexPage.propTypes = {
   }).isRequired
 };
 
-export default AboutIndexPage;
+export default MinistriesIndexPage;
 
-export const aboutPageQuery = graphql`
-  query AboutIndexPage {
+export const ministriesPageQuery = graphql`
+  query MinistriesIndexPage {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___index] },
-      filter: { frontmatter: { templateKey: { eq: "about" } } }
+      filter: { frontmatter: { templateKey: { eq: "ministries" } } }
     ) {
       edges {
         node {

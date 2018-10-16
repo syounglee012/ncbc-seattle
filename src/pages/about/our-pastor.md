@@ -1,7 +1,7 @@
 ---
 templateKey: about
 title: Our Pastor
-index: 2
+index: 3
 ---
 Pastor Stephen Jung is the senior pastor at New Covenant Baptist Church (NCBC) in Seattle. He earned a Bachelor of Science degree in Civil Engineering from the University of California Berkeley and a Master of Divinity at Golden Gate Baptist Theological Seminary.
 

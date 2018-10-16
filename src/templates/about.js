@@ -3,31 +3,29 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-export const AboutPageTemplate = ({ pages, title, content }) => {
-  return (
-    <section className="page-container">
-      <Helmet title={`${title} | About Us`} />
+export const AboutPageTemplate = ({ pages, title, content }) => (
+  <section className="page-container">
+    <Helmet title={`${title} | About Us`} />
 
-      <h1>About Us</h1>
-      <ul>
-        {pages.map(({ node: page }) => (
-          <li key={page.id}>
-            <Link to={page.fields.slug}>
-              {page.frontmatter.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="page">
-        <h2 className="page--title">{title}</h2>
-        <div
-          className="page--content"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      </div>
-    </section>
-  );
-};
+    <h1>About Us</h1>
+    <ul>
+      {pages.map(({ node: page }) => (
+        <li key={page.id}>
+          <Link to={page.fields.slug}>
+            {page.frontmatter.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+    <div className="page">
+      <h2 className="page--title">{title}</h2>
+      <div
+        className="page--content"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    </div>
+  </section>
+);
 
 AboutPageTemplate.defaultProps = {
   pages: [],
@@ -76,7 +74,7 @@ export const aboutPageQuery = graphql`
 
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___index] },
-      filter: { frontmatter: { templateKey: { eq: "about" } }}
+      filter: { frontmatter: { templateKey: { eq: "about" } } }
     ) {
       edges {
         node {
