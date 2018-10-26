@@ -2,7 +2,31 @@
   .component {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 16px;
+    padding: 24px 32px;
+    border-bottom: 1px solid #e8e8e8;
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+
+  .navBarBrandContainer {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+
+  .navBarBrand {
+    margin-left: 12px;
+    font-size: 18px;
+  }
+  
+  .logo {
+    width: 56px;
+    height: 100%;
+    margin: 0;
   }
 }
