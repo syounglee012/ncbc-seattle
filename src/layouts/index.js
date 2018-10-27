@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import 'typeface-open-sans';
+import 'typeface-shadows-into-light';
+import 'typeface-roboto-slab';
+import 'typeface-architects-daughter';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
