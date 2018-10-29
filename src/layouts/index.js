@@ -8,34 +8,44 @@ import Footer from '../components/Footer/Footer';
 
 import './index.css';
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0
-      }}
-    >
-      {children()}
+const Layout = ({ children, data, location, ...rest }) => {
+  const {
+    title,
+    address,
+    phone,
+    email,
+    instagram
+  } = data.site.siteMetadata;
+
+  return (
+    <div>
+      <Helmet
+        title={title}
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' }
+        ]}
+      />
+      
+      {location.pathname === '/'
+        ? children({data, location, siteTitle: title, ...rest})
+        : <Header siteTitle={title} />}
+
+      {location.pathname !== '/' && (
+        <section>
+          {children()}
+        </section>
+      )}
+
+      <Footer
+        address={address}
+        phone={phone}
+        email={email}
+        instagram={instagram}
+      />
     </div>
-    <Footer
-      address={data.site.siteMetadata.address}
-      phone={data.site.siteMetadata.phone}
-      email={data.site.siteMetadata.email}
-      instagram={data.site.siteMetadata.instagram}
-    />
-  </div>
-);
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.func

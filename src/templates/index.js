@@ -1,20 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Nav from '../components/Nav/Nav';
+import logo from '../img/logo.svg';
 
-const IndexPage = ({ data }) => {
+import styles from './index.module.scss';
+
+const IndexPage = ({ data, siteTitle }) => {
   const { markdownRemark: page } = data;
   const { frontmatter, html } = page;
 
   return (
-    <section className="page-container">
-      <div className="page">
-        <h1 className="page--title">{frontmatter.title}</h1>
-        <div
-          className="page--content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
-    </section>
+    <header className={styles.component}>
+      <main className={styles.hero}>
+        <div className={styles.navContainer}>
+          <div className={styles.navBarBrandContainer}>
+            <img src={logo} alt="NCBC Logo" className={styles.logo} />
+            <Link className={styles.navBarBrand} to="/">{siteTitle}</Link>
+          </div>
+          <Nav />
+        </div>
+        <div className={styles.heroContent}>
+          <h1 className={styles.title}>{frontmatter.main.heading}</h1>
+          <p className={styles.lead}>{frontmatter.main.lead}</p>
+        </div>
+      </main>
+    </header>
   );
 };
 
@@ -29,7 +40,11 @@ export const indexPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        title
+        title,
+        main {
+          heading,
+          lead
+        }
       }
     }
   }
