@@ -8,24 +8,53 @@ import styles from './index.module.scss';
 
 const IndexPage = ({ data, siteTitle }) => {
   const { markdownRemark: page } = data;
-  const { frontmatter, html } = page;
+  const { frontmatter } = page;
+  const {
+    heading,
+    time,
+    location,
+    room,
+    streetAddress,
+    city,
+    state,
+    zipCode
+  } = frontmatter.worshipServiceInfo;
 
   return (
-    <header className={styles.component}>
-      <main className={styles.hero}>
-        <div className={styles.navContainer}>
-          <div className={styles.navBarBrandContainer}>
-            <img src={logo} alt="NCBC Logo" className={styles.logo} />
-            <Link className={styles.navBarBrand} to="/">{siteTitle}</Link>
+    <div>
+      <header className={styles.component}>
+        <main className={styles.hero}>
+          <div className={styles.navContainer}>
+            <div className={styles.navBarBrandContainer}>
+              <img src={logo} alt="NCBC Logo" className={styles.logo} />
+              <Link className={styles.navBarBrand} to="/">{siteTitle}</Link>
+            </div>
+            <Nav />
           </div>
-          <Nav />
+          <div className={styles.heroContent}>
+            <h1 className={styles.title}>{frontmatter.main.heading}</h1>
+            <p className={styles.lead}>{frontmatter.main.lead}</p>
+          </div>
+        </main>
+      </header>
+      <section id="intro">
+        <div className={styles.container}>
+          <div className={styles.introContent}>
+            <h1 className={styles.sectionTitle}>{frontmatter.intro.heading}</h1>
+            <p className={styles.sectionContent}>{frontmatter.intro.content}</p>
+          </div>
         </div>
-        <div className={styles.heroContent}>
-          <h1 className={styles.title}>{frontmatter.main.heading}</h1>
-          <p className={styles.lead}>{frontmatter.main.lead}</p>
+      </section>
+      <section id="worship-service-info" className={styles.serviceInfoSection}>
+        <div className={`${styles.container} ${styles.serviceInfoContainer}`}>
+          <div className={styles.serviceInfoContent}>
+            <h1 className={styles.sectionTitle}>{heading}</h1>
+            <p className={styles.sectionContent}>Sundays at {time}</p>
+            <p className={styles.sectionContent}>{location}<br />({room})<br />{streetAddress}<br />{city}, {state}, {zipCode}</p>
+          </div>
         </div>
-      </main>
-    </header>
+      </section>
+    </div>
   );
 };
 
@@ -38,12 +67,25 @@ export default IndexPage;
 export const indexPageQuery = graphql`
   query IndexPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
         title,
         main {
           heading,
           lead
+        },
+        intro {
+          heading,
+          content
+        },
+        worshipServiceInfo {
+          heading,
+          time,
+          location,
+          room,
+          streetAddress,
+          city,
+          state,
+          zipCode
         }
       }
     }

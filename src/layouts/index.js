@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import 'typeface-open-sans';
-import 'typeface-architects-daughter';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
@@ -26,7 +24,7 @@ const Layout = ({ children, data, location, ...rest }) => {
           { name: 'keywords', content: 'sample, something' }
         ]}
       />
-      
+
       {location.pathname === '/'
         ? children({data, location, siteTitle: title, ...rest})
         : <Header siteTitle={title} />}

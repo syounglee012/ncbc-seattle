@@ -60,4 +60,40 @@
     height: 100%;
     margin: 0;
   }
+
+  section {
+    padding: 150px 0;
+  }
+  
+  .container {
+    max-width: 1300px;
+    padding: 0 32px;
+    margin: 0 auto;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .sectionContent {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .introContent {
+    max-width: 680px;
+  }
+
+  .serviceInfoSection {
+    background-color: #f8f8f8;
+  }
+
+  .serviceInfoContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .serviceInfoContent {
+    margin-right: 128px;
+  }
 }
