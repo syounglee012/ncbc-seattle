@@ -61,12 +61,12 @@
     margin: 0;
   }
 
-  section {
+  .homeSection {
     padding: 150px 0;
   }
   
   .container {
-    max-width: 1300px;
+    max-width: 1200px;
     padding: 0 32px;
     margin: 0 auto;
   }
@@ -84,7 +84,7 @@
     max-width: 680px;
   }
 
-  .serviceInfoSection {
+  .serviceInfo {
     background-color: #f8f8f8;
   }
 
@@ -95,5 +95,15 @@
 
   .serviceInfoContent {
     margin-right: 128px;
+  }
+
+  .keyVerseContent {
+    text-align: center;
+  }
+
+  .verse {
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: .02em;
   }
 }

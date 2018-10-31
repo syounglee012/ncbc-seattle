@@ -29,11 +29,7 @@ const Layout = ({ children, data, location, ...rest }) => {
         ? children({data, location, siteTitle: title, ...rest})
         : <Header siteTitle={title} />}
 
-      {location.pathname !== '/' && (
-        <section>
-          {children()}
-        </section>
-      )}
+      {location.pathname !== '/' && children()}
 
       <Footer
         address={address}
