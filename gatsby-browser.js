@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-exports.onInitialClientRender = () => {
+exports.onClientEntry = () => {
   require('typeface-open-sans');
   require('typeface-architects-daughter');
 };
