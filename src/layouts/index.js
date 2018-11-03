@@ -6,7 +6,7 @@ import Footer from '../components/Footer/Footer';
 
 import './index.css';
 
-const Layout = ({ children, data, location, ...rest }) => {
+const Layout = ({ children, data, location }) => {
   const {
     title,
     address,
@@ -25,9 +25,7 @@ const Layout = ({ children, data, location, ...rest }) => {
         ]}
       />
 
-      {location.pathname === '/'
-        ? children({data, location, siteTitle: title, ...rest})
-        : <Header siteTitle={title} />}
+      {location.pathname === '/' ? children() : <Header />}
 
       {location.pathname !== '/' && children()}
 

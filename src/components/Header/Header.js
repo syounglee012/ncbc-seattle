@@ -4,22 +4,28 @@ import Link from 'gatsby-link';
 import Nav from '../Nav/Nav';
 import logo from '../../img/logo.svg';
 
-import styles from './Header.module.scss';
+import style from './Header.module.scss';
 
-const Header = ({ siteTitle }) => (
-  <header className={styles.component}>
-    <div className={styles.navContainer}>
-      <div className={styles.navBarBrandContainer}>
-        <img src={logo} alt="NCBC Logo" className={styles.logo} />
-        <Link className={styles.navBarBrand} to="/">{siteTitle}</Link>
+const Header = ({ title, className }) => (
+  <header className={`${className} ${style.component}`}>
+    <div className={style.navContainer}>
+      <div className={style.navBarBrandContainer}>
+        <img src={logo} alt="NCBC Logo" className={style.logo} />
+        <Link className={style.navBarBrand} to="/">{title}</Link>
       </div>
       <Nav />
     </div>
   </header>
 );
 
+Header.defaultProps = {
+  className: undefined,
+  title: 'New Covenant Baptist Church'
+};
+
 Header.propTypes = {
-  siteTitle: PropTypes.string.isRequired
+  className: PropTypes.string,
+  title: PropTypes.string
 };
 
 export default Header;

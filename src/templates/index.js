@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Nav from '../components/Nav/Nav';
-import logo from '../img/logo.svg';
+import Header from '../components/Header/Header';
 
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
-const IndexPage = ({ data, siteTitle }) => {
+const IndexPage = ({ data }) => {
   const { markdownRemark: page } = data;
-  const { frontmatter } = page;
+  const { frontmatter: { 
+    main,
+    intro,
+    worshipServiceInfo,
+    keyVerse
+  } } = page;
+
   const {
     heading,
     time,
@@ -18,50 +22,42 @@ const IndexPage = ({ data, siteTitle }) => {
     city,
     state,
     zipCode
-  } = frontmatter.worshipServiceInfo;
+  } = worshipServiceInfo;
 
   return (
-    <div className={styles.component}>
-      <header className={styles.header}>
-        <main className={styles.hero}>
-          <div className={styles.navContainer}>
-            <div className={styles.navBarBrandContainer}>
-              <img src={logo} alt="NCBC Logo" className={styles.logo} />
-              <Link className={styles.navBarBrand} to="/">{siteTitle}</Link>
-            </div>
-            <Nav />
-          </div>
-          <div className={styles.heroContent}>
-            <h1 className={styles.title}>{frontmatter.main.heading}</h1>
-            <p className={styles.lead}>{frontmatter.main.lead}</p>
-          </div>
-        </main>
-      </header>
+    <div className={style.component}>
+      <main className={style.main}>
+        <Header className={style.header} />
+        <div className={style.mainContent}>
+          <h1 className={style.title}>{main.heading}</h1>
+          <p className={style.lead}>{main.lead}</p>
+        </div>
+      </main>
       <section id="intro">
-        <div className={styles.container}>
-          <div className={styles.introContent}>
-            <h1>{frontmatter.intro.heading}</h1>
-            <p>{frontmatter.intro.content}</p>
+        <div className={style.container}>
+          <div className={style.introContent}>
+            <h1>{intro.heading}</h1>
+            <p>{intro.content}</p>
           </div>
         </div>
       </section>
-      <section id="service-info" className={styles.serviceInfo}>
-        <div className={`${styles.container} ${styles.serviceInfoContainer}`}>
-          <div className={styles.serviceInfoContent}>
+      <section id="service-info" className={style.serviceInfo}>
+        <div className={`${style.container} ${style.serviceInfoContainer}`}>
+          <div className={style.serviceInfoContent}>
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
             <p>{location}<br />({room})<br />{streetAddress}<br />{city}, {state}, {zipCode}</p>
-            <button className={styles.directionButton}>
+            <button className={style.directionButton}>
               Get Directions
             </button>
           </div>
         </div>
       </section>
       <section id="key-verse">
-        <div className={`${styles.container} ${styles.keyVerseContainer}`}>
-          <div className={styles.keyVerseContent}>
-            <h1 className={styles.verse}>"{frontmatter.keyVerse.verse}"</h1>
-            <p className={styles.reference}>{frontmatter.keyVerse.reference}</p>
+        <div className={`${style.container} ${style.keyVerseContainer}`}>
+          <div className={style.keyVerseContent}>
+            <h1 className={style.verse}>"{keyVerse.verse}"</h1>
+            <p className={style.reference}>{keyVerse.reference}</p>
           </div>
         </div>
       </section>

@@ -12,19 +12,22 @@
     }
   }
 
-  .header {
+  .main {
     height: 100vh;
-  }
-
-  .hero {
-    height: 100%;
     background: url('../img/hero-bg.jpg') fixed center center;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 
-  .heroContent {
+  .header {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+  }
+
+  .mainContent {
     display: flex;
     align-items: center;
     justify-content: center;

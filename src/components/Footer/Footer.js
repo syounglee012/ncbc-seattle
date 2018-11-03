@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import logo from '../../img/logo.svg';
 import instagramIcon from '../../img/instagram-icon.svg';
 import envelopeIcon from '../../img/envelope-icon.svg';
-import styles from './Footer.module.scss';
+import style from './Footer.module.scss';
 
 const Footer = ({ address, email, phone, instagram }) => {
   const currentYear = new Date().getFullYear();
@@ -20,9 +20,9 @@ const Footer = ({ address, email, phone, instagram }) => {
   return (
     <footer>
       <div>
-        <div className={styles.brandContainer}>
-          <img src={logo} alt="NCBC Logo" className={styles.logo} />
-          <span className={styles.brandName}>{ncbc}</span>
+        <div className={style.brandContainer}>
+          <img src={logo} alt="NCBC Logo" className={style.logo} />
+          <span className={style.brandName}>{ncbc}</span>
         </div>
         <span>{name} ({unit})</span>
         <span>{streetAddress}, {city}, {state} {zipCode}</span>
@@ -49,8 +49,8 @@ const Footer = ({ address, email, phone, instagram }) => {
           </div>
         </div>
         <div className="footer-social-links">
-          <img src={instagramIcon} alt="Instagram Icon" className={styles.socialLinkIcon} />
-          <img src={envelopeIcon} alt="Evenlope Icon" className={styles.socialLinkIcon} />
+          <img src={instagramIcon} alt="Instagram Icon" className={style.socialLinkIcon} />
+          <img src={envelopeIcon} alt="Evenlope Icon" className={style.socialLinkIcon} />
         </div>
       </div>
       <div>
