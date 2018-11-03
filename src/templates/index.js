@@ -29,8 +29,8 @@ const IndexPage = ({ data }) => {
       <main className={style.main}>
         <Header className={style.header} />
         <div className={style.mainContent}>
-          <h1 className={style.title}>{main.heading}</h1>
-          <p className={style.lead}>{main.lead}</p>
+          <h1 className={`${style.title} ${style.fadeInDown}`}>{main.heading}</h1>
+          <p className={`${style.lead} ${style.fadeInUp}`}>{main.lead}</p>
         </div>
       </main>
       <section id="intro">
