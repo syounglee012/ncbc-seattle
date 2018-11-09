@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
+import bible from '../img/bible.jpg';
 
 import style from './index.module.scss';
 
@@ -43,6 +44,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section id="service-info" className={style.serviceInfo}>
         <div className={`${style.container} ${style.serviceInfoContainer}`}>
+          <img className={style.serviceInfoImage} src={bible}/>
           <div className={style.serviceInfoContent}>
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
