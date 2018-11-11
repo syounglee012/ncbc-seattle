@@ -5,6 +5,8 @@ import bible from '../img/bible.jpg';
 
 import style from './index.module.scss';
 
+const DIRECTION_URL = 'https://www.google.com/maps/dir/?api=1&destination=University+Lutheran+Church,+1604+NE+50th+St,+Seattle,+WA+98105';
+
 const IndexPage = ({ data }) => {
   const { markdownRemark: page } = data;
   const { frontmatter: { 
@@ -49,9 +51,9 @@ const IndexPage = ({ data }) => {
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
             <p>{location}<br />({room})<br />{streetAddress}<br />{city}, {state}, {zipCode}</p>
-            <button className={style.directionButton}>
+            <a className={style.directionButton} href={DIRECTION_URL} target="_blank" rel="noopener noreferrer">
               Get Directions
-            </button>
+            </a>
           </div>
         </div>
       </section>
