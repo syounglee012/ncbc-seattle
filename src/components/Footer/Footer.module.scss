@@ -1,23 +1,29 @@
 :local {
   .component {
+    padding-top: 150px;
+    border-top: 1px solid #e8e8e8;
   }
 
-  .brandContainer {
+  .footerContent {
     display: flex;
-    align-items: center;
-  }
-  
-  .brandName {
-    margin-left: 12px;
-  }
-
-  .logo {
-    width: 64px;
-    height: 100%;
-    margin: 0;
+    margin-bottom: 100px;
   }
 
   .socialLinkIcon {
     width: 32px;
+  }
+
+  .component address {
+    font-style: normal;
+
+    span {
+      display: block;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid #e8e8e8;
   }
 }

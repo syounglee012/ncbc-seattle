@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
         </div>
       </main>
       <section id="intro">
-        <div className={style.container}>
+        <div className="container">
           <div className={style.introContent}>
             <h1>{intro.heading}</h1>
             <p>{intro.content}</p>
@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <section id="service-info" className={style.serviceInfo}>
-        <div className={`${style.container} ${style.serviceInfoContainer}`}>
+        <div className={`container ${style.serviceInfoContainer}`}>
           <img className={style.serviceInfoImage} src={bible}/>
           <div className={style.serviceInfoContent}>
             <h1>{heading}</h1>
@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <section id="key-verse">
-        <div className={`${style.container} ${style.keyVerseContainer}`}>
+        <div className="container">
           <div className={style.keyVerseContent}>
             <h1 className={style.verse}>"{keyVerse.verse}"</h1>
             <p className={style.reference}>{keyVerse.reference}</p>

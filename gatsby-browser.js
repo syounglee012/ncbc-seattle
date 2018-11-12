@@ -3,8 +3,3 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
-// exports.onClientEntry = () => {
-//   require('typeface-open-sans');
-//   require('typeface-architects-daughter');
-// };
