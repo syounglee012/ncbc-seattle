@@ -1,12 +1,46 @@
 :local {
   .component {
     padding-top: 150px;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #85d5ff;
+    background-color: #00547f;
+    color: #fff;
+
+    a {
+      color: #85d5ff;
+    }
+  }
+
+  .brandContainer {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+
+  .brand {
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'architects daughter' -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    letter-spacing: 0.015em;
+  }
+
+  a.brand {
+    color: #fff;
+  }
+  
+  .logo {
+    width: 32px;
+    height: 100%;
+    margin: 0;
   }
 
   .footerContent {
     display: flex;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+  }
+
+  .left {
+    width: 40%;
   }
 
   .socialLinkIcon {
@@ -15,6 +49,7 @@
 
   .component address {
     font-style: normal;
+    margin: 16px 0;
 
     span {
       display: block;
@@ -23,7 +58,7 @@
 
   .copyright {
     text-align: center;
-    padding: 24px 0;
-    border-top: 1px solid #e8e8e8;
+    padding: 16px 0;
+    font-weight: 300;
   }
 }

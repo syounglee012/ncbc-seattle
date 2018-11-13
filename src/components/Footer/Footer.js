@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Brand from '../Brand/Brand';
-import logo from '../../img/logo.svg';
-import instagramIcon from '../../img/instagram-icon.svg';
-import envelopeIcon from '../../img/envelope-icon.svg';
+import Link from 'gatsby-link';
+import instagramIcon from '../../img/svg/instagram-icon.svg';
+import envelopeIcon from '../../img/svg/envelope-icon.svg';
+import logo from '../../img/svg/box-logo.svg';
 
-import style from './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 const Footer = ({ address, email, phone, instagram }) => {
   const currentYear = new Date().getFullYear();
@@ -20,10 +20,13 @@ const Footer = ({ address, email, phone, instagram }) => {
   } = address;
 
   return (
-    <footer className={style.component}>
-      <div className={`container ${style.footerContent}`}>
-        <div className={style.footerLeft}>
-          <Brand />
+    <footer className={styles.component}>
+      <div className={`container ${styles.footerContent}`}>
+        <div className={styles.left}>
+          <div className={styles.brandContainer}>
+            <img src={logo} alt="NCBC Logo" className={styles.logo} />
+            <Link className={styles.brand} to="/">New Covenant Baptist Church</Link>
+          </div>
           <address>
             <span>{name} ({unit})</span>
             <span>{streetAddress}, {city}, {state} {zipCode}</span>
@@ -31,7 +34,7 @@ const Footer = ({ address, email, phone, instagram }) => {
           </address>
           <p>NCBC adheres to the Statement of Faith adopted by the <a href="http://www.sbc.net/" target="_blank" rel="noopener noreferrer">Southern Baptist Convention</a>.</p>
         </div>
-        <div className={style.footerRight}>
+        <div className={styles.right}>
           <div className="footer-navs">
             <div className="footer-nav-col">
               <span>About</span>
@@ -51,12 +54,12 @@ const Footer = ({ address, email, phone, instagram }) => {
             </div>
           </div>
           <div className="footer-social-links">
-            <img src={instagramIcon} alt="Instagram Icon" className={style.socialLinkIcon} />
-            <img src={envelopeIcon} alt="Evenlope Icon" className={style.socialLinkIcon} />
+            <img src={instagramIcon} alt="Instagram Icon" className={styles.socialLinkIcon} />
+            <img src={envelopeIcon} alt="Evenlope Icon" className={styles.socialLinkIcon} />
           </div>
         </div>
       </div>
-      <div className={style.copyright}>
+      <div className={styles.copyright}>
         <p>&copy; {currentYear} {ncbc}. All rights reserved.</p>
       </div>
     </footer>

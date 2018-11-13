@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import bible from '../img/bible.jpg';
 
-import style from './index.module.scss';
+import styles from './index.module.scss';
 
 const DIRECTION_URL = 'https://www.google.com/maps/dir/?api=1&destination=University+Lutheran+Church,+1604+NE+50th+St,+Seattle,+WA+98105';
 
@@ -28,30 +28,30 @@ const IndexPage = ({ data }) => {
   } = worshipServiceInfo;
 
   return (
-    <div className={style.component}>
-      <main className={style.main}>
-        <Header className={style.header} />
-        <div className={style.mainContent}>
-          <h1 className={`${style.title} ${style.fadeInDown}`}>{main.heading}</h1>
-          <p className={`${style.lead} ${style.fadeInUp}`}>{main.lead}</p>
+    <div className={styles.component}>
+      <main className={styles.main}>
+        <Header className={styles.header} />
+        <div className={styles.mainContent}>
+          <h1 className={`${styles.title} ${styles.fadeInDown}`}>{main.heading}</h1>
+          <p className={`${styles.lead} ${styles.fadeInUp}`}>{main.lead}</p>
         </div>
       </main>
       <section id="intro">
         <div className="container">
-          <div className={style.introContent}>
+          <div className={styles.introContent}>
             <h1>{intro.heading}</h1>
             <p>{intro.content}</p>
           </div>
         </div>
       </section>
-      <section id="service-info" className={style.serviceInfo}>
-        <div className={`container ${style.serviceInfoContainer}`}>
-          <img className={style.serviceInfoImage} src={bible}/>
-          <div className={style.serviceInfoContent}>
+      <section id="service-info" className={styles.serviceInfo}>
+        <div className={`container ${styles.serviceInfoContainer}`}>
+          <img className={styles.serviceInfoImage} src={bible}/>
+          <div className={styles.serviceInfoContent}>
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
             <p>{location}<br />({room})<br />{streetAddress}<br />{city}, {state}, {zipCode}</p>
-            <a className={style.directionButton} href={DIRECTION_URL} target="_blank" rel="noopener noreferrer">
+            <a className={styles.directionButton} href={DIRECTION_URL} target="_blank" rel="noopener noreferrer">
               Get Directions
             </a>
           </div>
@@ -59,9 +59,9 @@ const IndexPage = ({ data }) => {
       </section>
       <section id="key-verse">
         <div className="container">
-          <div className={style.keyVerseContent}>
-            <h1 className={style.verse}>"{keyVerse.verse}"</h1>
-            <p className={style.reference}>{keyVerse.reference}</p>
+          <div className={styles.keyVerseContent}>
+            <h1 className={styles.verse}>"{keyVerse.verse}"</h1>
+            <p className={styles.reference}>{keyVerse.reference}</p>
           </div>
         </div>
       </section>

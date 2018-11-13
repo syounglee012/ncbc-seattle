@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Brand from '../Brand/Brand';
+import Link from 'gatsby-link';
 import Nav from '../Nav/Nav';
+import logo from '../../img/svg/logo.svg';
 
-import style from './Header.module.scss';
+import styles from './Header.module.scss';
 
-const Header = ({ title, className }) => (
-  <header className={`${className} ${style.component}`}>
-    <div className={style.navContainer}>
-      <Brand />
+const Header = ({ className }) => (
+  <header className={`${className} ${styles.component}`}>
+    <div className={styles.navContainer}>
+      <div className={styles.brandContainer}>
+        <img src={logo} alt="NCBC Logo" className={styles.logo} />
+        <Link className={styles.brand} to="/">New Covenant Baptist Church</Link>
+      </div>
       <Nav />
     </div>
   </header>

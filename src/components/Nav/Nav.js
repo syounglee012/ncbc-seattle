@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
-import style from './Nav.module.scss';
+import styles from './Nav.module.scss';
 
 const Nav = () => (
-  <nav className={style.component}>
+  <nav className={styles.component}>
     <ul>
       <li>
         <Link to="/about/">About</Link>
