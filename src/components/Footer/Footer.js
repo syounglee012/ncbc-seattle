@@ -22,7 +22,7 @@ const Footer = ({ address, email, phone, instagram }) => {
   return (
     <footer className={styles.component}>
       <div className={`container ${styles.footerContent}`}>
-        <div className={styles.left}>
+        <div className={styles.leftCol}>
           <div className={styles.brandContainer}>
             <img src={logo} alt="NCBC Logo" className={styles.logo} />
             <Link className={styles.brand} to="/">New Covenant Baptist Church</Link>
@@ -32,30 +32,56 @@ const Footer = ({ address, email, phone, instagram }) => {
             <span>{streetAddress}, {city}, {state} {zipCode}</span>
             <a href={`tel:+1${phone}`}>{phone}</a>
           </address>
-          <p>NCBC adheres to the Statement of Faith adopted by the <a href="http://www.sbc.net/" target="_blank" rel="noopener noreferrer">Southern Baptist Convention</a>.</p>
+          <p className={styles.sbc}>NCBC adheres to the Statement of Faith adopted<br /> by the <a href="http://www.sbc.net/" target="_blank" rel="noopener noreferrer">Southern Baptist Convention</a>.</p>
         </div>
-        <div className={styles.right}>
-          <div className="footer-navs">
-            <div className="footer-nav-col">
-              <span>About</span>
-              <span>Who We Are</span>
-              <span>Our Core Values</span>
-              <span>Our Pastor</span>
+        <div className={styles.rightCol}>
+          <nav className={styles.footerNav}>
+            <div className={styles.footerNavCol}>
+              <h2 className={styles.footerNavTitle}>About</h2>
+              <ul>
+                <li>
+                  <Link to="/about/who-we-are">Who We Are</Link>
+                </li>
+                <li>
+                  <Link to="/about/our-core-values">Our Core Values</Link>
+                </li>
+                <li>
+                  <Link to="/about/our-pastor">Our Pastor</Link>
+                </li>
+              </ul>
             </div>
-            <div className="footer-nav-col">
-              <span>About</span>
-              <span>Young Adult</span>
-              <span>College</span>
-              <span>Children</span>
+            <div className={styles.footerNavCol}>
+              <h2 className={styles.footerNavTitle}>Ministries</h2>
+              <ul>
+                <li>
+                  <Link to="/ministries/young-adult">Young Adult</Link>
+                </li>
+                <li>
+                  <Link to="/ministries/college">College</Link>
+                </li>
+                <li>
+                  <Link to="/ministries/children">Children</Link>
+                </li>
+              </ul>
             </div>
-            <div className="footer-nav-col">
-              <span>Devotional</span>
-              <span>Location</span>
+            <div className={styles.footerNavCol}>
+              <ul>
+                <li>
+                  <Link to="/devotional" className={styles.footerNavTitle}>Devotional</Link>
+                </li>
+                <li>
+                  <Link to="/location" className={styles.footerNavTitle}>Location</Link>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div className="footer-social-links">
-            <img src={instagramIcon} alt="Instagram Icon" className={styles.socialLinkIcon} />
-            <img src={envelopeIcon} alt="Evenlope Icon" className={styles.socialLinkIcon} />
+          </nav>
+          <div className={styles.socialLinks}>
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              <img src={instagramIcon} alt="Instagram Icon" className={styles.socialLinkIcon} />
+            </a>
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              <img src={envelopeIcon} alt="Evenlope Icon" className={styles.socialLinkIcon} />
+            </a>
           </div>
         </div>
       </div>

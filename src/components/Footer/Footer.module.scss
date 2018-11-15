@@ -7,6 +7,12 @@
 
     a {
       color: #85d5ff;
+
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+        transition: unset;
+      }
     }
   }
 
@@ -26,6 +32,10 @@
 
   a.brand {
     color: #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
   
   .logo {
@@ -39,11 +49,49 @@
     margin-bottom: 80px;
   }
 
-  .left {
-    width: 40%;
+  .leftCol {
+    width: 100%;
+  }
+
+  .rightCol {
+    width: 100%;
+    padding: 0 32px;
+  }
+
+  .footerNav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footerNavCol {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+
+  .footerNavTitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .socialLinks {
+    display: flex;
+    margin: 32px 0;
+
+    a {
+      margin-right: 40px;
+    }
   }
 
   .socialLinkIcon {
+    display: block;
     width: 32px;
   }
 
@@ -54,6 +102,10 @@
     span {
       display: block;
     }
+  }
+
+  .sbc {
+    margin: 32px 0;
   }
 
   .copyright {
