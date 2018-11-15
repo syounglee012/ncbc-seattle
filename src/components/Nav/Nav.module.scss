@@ -12,5 +12,9 @@
     li {
       margin: 0;
     }
+
+    a:hover {
+      color: darken(#555, 20%);
+    }
   }
 }
