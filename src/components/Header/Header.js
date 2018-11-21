@@ -19,7 +19,7 @@ const Header = ({ className }) => (
 );
 
 Header.defaultProps = {
-  className: undefined
+  className: ''
 };
 
 Header.propTypes = {

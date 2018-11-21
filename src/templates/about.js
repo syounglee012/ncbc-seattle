@@ -3,26 +3,31 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-export const AboutPageTemplate = ({ pages, title, content }) => (
-  <section className="page-container">
-    <Helmet title={`${title} | About Us`} />
+import styles from './about.module.scss';
 
-    <h1>About Us</h1>
-    <ul>
-      {pages.map(({ node: page }) => (
-        <li key={page.id}>
-          <Link to={page.fields.slug}>
-            {page.frontmatter.navLinkText}
-          </Link>
-        </li>
-      ))}
-    </ul>
-    <div className="page">
-      <h2 className="page--title">{title}</h2>
-      <div
-        className="page--content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+export const AboutPageTemplate = ({ pages, title, content }) => (
+  <section className={styles.component}>
+    <div className={styles.container}>
+      <Helmet title={`${title} | About Us`} />
+      <h1 className={styles.pageTitle}>About Us</h1>
+      <div className={styles.pageContent}>
+        <ul className={styles.sideNav}>
+          {pages.map(({ node: page }) => (
+            <li key={page.id}>
+              <Link to={page.fields.slug}>
+                {page.frontmatter.navLinkText}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <article className={styles.article}>
+          <h2 className={styles.articleTitle}>{title}</h2>
+          <div
+            className={styles.articleContent}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </article>
+      </div>
     </div>
   </section>
 );
