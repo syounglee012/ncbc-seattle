@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import SideNav from '../components/SideNav/SideNav';
 
 import styles from './about.module.scss';
 
@@ -11,22 +12,7 @@ export const AboutPageTemplate = ({ pages, title, content }) => (
       <Helmet title={`${title} | About Us`} />
       <h1 className={styles.pageTitle}>About Us</h1>
       <div className={styles.pageContent}>
-        <nav>
-          <ul className={styles.sideNav}>
-            {pages.map(({ node: page }) => (
-              <li key={page.id}>
-                <Link
-                  to={page.fields.slug}
-                  activeStyle={{
-                    fontWeight: 600
-                  }}
-                >
-                  {page.frontmatter.navLinkText}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <SideNav pages={pages} />
         <article className={styles.article}>
           <h2 className={styles.articleTitle}>{title}</h2>
           <div

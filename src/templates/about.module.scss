@@ -14,26 +14,12 @@
     margin-right: auto;
   }
 
-  .active {
-    font-weight: 600;
-  }
-
   .pageTitle {
     font-size: 48px;
   }
 
   .pageContent {
     display: flex;
-  }
-
-  .sideNav {
-    width: 300px;
-    font-size: 18px;
-    line-height: 2;
-    
-    a:hover {
-      text-decoration: underline;
-    }
   }
 
   .article {
