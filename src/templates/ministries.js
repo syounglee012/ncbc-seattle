@@ -1,30 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import Page from '../components/Page/Page';
+import SideNav from '../components/SideNav/SideNav';
+
+import styles from './ministries.module.scss';
 
 export const MinistriesPageTemplate = ({ pages, title, content }) => (
-  <section className="page-container">
+  <Page title="Ministries">
     <Helmet title={`${title} | Ministries`} />
-
-    <h1>Ministries</h1>
-    <ul>
-      {pages.map(({ node: page }) => (
-        <li key={page.id}>
-          <Link to={page.fields.slug}>
-            {page.frontmatter.navLinkText}
-          </Link>
-        </li>
-      ))}
-    </ul>
-    <div className="page">
-      <h2 className="page--title">{title}</h2>
+    <SideNav pages={pages} />
+    <article className={styles.article}>
+      <h2 className={styles.articleTitle}>{title}</h2>
       <div
-        className="page--content"
+        className={styles.articleContent}
         dangerouslySetInnerHTML={{ __html: content }}
       />
-    </div>
-  </section>
+    </article>
+  </Page>
 );
 
 MinistriesPageTemplate.defaultProps = {

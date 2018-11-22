@@ -1,28 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import Page from '../components/Page/Page';
 import SideNav from '../components/SideNav/SideNav';
 
 import styles from './about.module.scss';
 
 export const AboutPageTemplate = ({ pages, title, content }) => (
-  <section className={styles.component}>
-    <div className={styles.container}>
-      <Helmet title={`${title} | About Us`} />
-      <h1 className={styles.pageTitle}>About Us</h1>
-      <div className={styles.pageContent}>
-        <SideNav pages={pages} />
-        <article className={styles.article}>
-          <h2 className={styles.articleTitle}>{title}</h2>
-          <div
-            className={styles.articleContent}
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </article>
-      </div>
-    </div>
-  </section>
+  <Page title="About Us">
+    <Helmet title={`${title} | About Us`} />
+    <SideNav pages={pages} />
+    <article className={styles.article}>
+      <h2 className={styles.articleTitle}>{title}</h2>
+      <div
+        className={styles.articleContent}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    </article>
+  </Page>
 );
 
 AboutPageTemplate.defaultProps = {
