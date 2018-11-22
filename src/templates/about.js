@@ -11,15 +11,22 @@ export const AboutPageTemplate = ({ pages, title, content }) => (
       <Helmet title={`${title} | About Us`} />
       <h1 className={styles.pageTitle}>About Us</h1>
       <div className={styles.pageContent}>
-        <ul className={styles.sideNav}>
-          {pages.map(({ node: page }) => (
-            <li key={page.id}>
-              <Link to={page.fields.slug}>
-                {page.frontmatter.navLinkText}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <nav>
+          <ul className={styles.sideNav}>
+            {pages.map(({ node: page }) => (
+              <li key={page.id}>
+                <Link
+                  to={page.fields.slug}
+                  activeStyle={{
+                    fontWeight: 600
+                  }}
+                >
+                  {page.frontmatter.navLinkText}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <article className={styles.article}>
           <h2 className={styles.articleTitle}>{title}</h2>
           <div
