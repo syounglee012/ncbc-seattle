@@ -5,8 +5,12 @@
     font-size: 18px;
     line-height: 2;
     
-    a:hover {
-      text-decoration: underline;
+    a {
+      color: #555;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

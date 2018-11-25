@@ -7,7 +7,7 @@ import logo from '../../img/svg/logo.svg';
 import styles from './Header.module.scss';
 
 const Header = ({ className }) => (
-  <header className={`${className} ${styles.component}`}>
+  <header className={`${styles.component} ${className}`.trim()}>
     <div className={styles.navContainer}>
       <div className={styles.brandContainer}>
         <img src={logo} alt="NCBC Logo" className={styles.logo} />

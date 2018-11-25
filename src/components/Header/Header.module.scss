@@ -23,10 +23,15 @@
 
   .brand {
     margin-left: 10px;
+    color: #555;
     font-size: 18px;
     font-family: 'architects daughter' -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
       Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     letter-spacing: 0.015em;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
   
   .logo {

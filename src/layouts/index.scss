@@ -28,8 +28,12 @@ h1 {
 }
 
 a {
-  color: #555;
+  color: #00547f;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 a, button {
@@ -43,6 +47,10 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+address {
+  font-style: normal;
 }
 
 .container {

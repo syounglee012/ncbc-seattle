@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
+import DirectionsButton from '../components/DirectionsButton/DirectionsButton';
 import bible from '../img/bible.jpg';
 
 import styles from './index.module.scss';
-
-const DIRECTION_URL = 'https://www.google.com/maps/dir/?api=1&destination=University+Lutheran+Church,+1604+NE+50th+St,+Seattle,+WA+98105';
 
 const IndexPage = ({ data }) => {
   const { markdownRemark: page } = data;
@@ -51,9 +50,7 @@ const IndexPage = ({ data }) => {
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
             <p>{location}<br />({room})<br />{streetAddress}<br />{city}, {state}, {zipCode}</p>
-            <a className={styles.directionButton} href={DIRECTION_URL} target="_blank" rel="noopener noreferrer">
-              Get Directions
-            </a>
+            <DirectionsButton />
           </div>
         </div>
       </section>
