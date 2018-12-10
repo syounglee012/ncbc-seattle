@@ -34,15 +34,12 @@ AboutPageTemplate.propTypes = {
 const AboutPage = ({ data }) => {
   const { edges: pages } = data.allMarkdownRemark;
   const { markdownRemark: page } = data;
-  const { frontmatter: { title }, html } = page;
+  const {
+    frontmatter: { title },
+    html
+  } = page;
 
-  return (
-    <AboutPageTemplate
-      pages={pages}
-      title={title}
-      content={html}
-    />
-  );
+  return <AboutPageTemplate pages={pages} title={title} content={html} />;
 };
 
 AboutPage.propTypes = {
@@ -66,7 +63,7 @@ export const aboutPageQuery = graphql`
     }
 
     allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___index] },
+      sort: { order: ASC, fields: [frontmatter___index] }
       filter: { frontmatter: { templateKey: { eq: "about" } } }
     ) {
       edges {

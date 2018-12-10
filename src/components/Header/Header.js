@@ -11,7 +11,9 @@ const Header = ({ className }) => (
     <div className={styles.navContainer}>
       <div className={styles.brandContainer}>
         <img src={logo} alt="NCBC Logo" className={styles.logo} />
-        <Link className={styles.brand} to="/">New Covenant Baptist Church</Link>
+        <Link className={styles.brand} to="/">
+          New Covenant Baptist Church
+        </Link>
       </div>
       <Nav />
     </div>

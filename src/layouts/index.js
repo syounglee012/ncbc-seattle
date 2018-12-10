@@ -7,13 +7,7 @@ import Footer from '../components/Footer/Footer';
 import './index.scss';
 
 const Layout = ({ children, data, location }) => {
-  const {
-    title,
-    address,
-    phone,
-    email,
-    instagram
-  } = data.site.siteMetadata;
+  const { title, address, phone, email, instagram } = data.site.siteMetadata;
 
   return (
     <div>
@@ -49,17 +43,17 @@ export const query = graphql`
   query SiteMetadataQuery {
     site {
       siteMetadata {
-        title,
+        title
         address {
-          name,
-          streetAddress,
-          unit,
-          city,
-          state,
+          name
+          streetAddress
+          unit
+          city
+          state
           zipCode
         }
-        phone,
-        email,
+        phone
+        email
         instagram
       }
     }

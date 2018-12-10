@@ -33,16 +33,13 @@ MinistriesPageTemplate.propTypes = {
 
 const MinistriesPage = ({ data }) => {
   const { edges: pages } = data.allMarkdownRemark;
-  const { markdownRemark: page} = data;
-  const { frontmatter: { title }, html } = page;
+  const { markdownRemark: page } = data;
+  const {
+    frontmatter: { title },
+    html
+  } = page;
 
-  return (
-    <MinistriesPageTemplate
-      pages={pages}
-      title={title}
-      content={html}
-    />
-  );
+  return <MinistriesPageTemplate pages={pages} title={title} content={html} />;
 };
 
 MinistriesPage.propTypes = {
@@ -66,8 +63,8 @@ export const ministriesPageQuery = graphql`
     }
 
     allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___index] },
-      filter: { frontmatter: { templateKey: { eq: "ministries"} } }
+      sort: { order: ASC, fields: [frontmatter___index] }
+      filter: { frontmatter: { templateKey: { eq: "ministries" } } }
     ) {
       edges {
         node {

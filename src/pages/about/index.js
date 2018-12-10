@@ -5,15 +5,12 @@ import { AboutPageTemplate } from '../../templates/about';
 const AboutIndexPage = ({ data }) => {
   const { edges: pages } = data.allMarkdownRemark;
   const firstPage = pages[0].node;
-  const { frontmatter: { title }, html } = firstPage;
+  const {
+    frontmatter: { title },
+    html
+  } = firstPage;
 
-  return (
-    <AboutPageTemplate
-      pages={pages}
-      title={title}
-      content={html}
-    />
-  );
+  return <AboutPageTemplate pages={pages} title={title} content={html} />;
 };
 
 AboutIndexPage.propTypes = {
@@ -29,7 +26,7 @@ export default AboutIndexPage;
 export const aboutPageQuery = graphql`
   query AboutIndexPage {
     allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___index] },
+      sort: { order: ASC, fields: [frontmatter___index] }
       filter: { frontmatter: { templateKey: { eq: "about" } } }
     ) {
       edges {

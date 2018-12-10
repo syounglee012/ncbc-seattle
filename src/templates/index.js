@@ -8,12 +8,9 @@ import styles from './index.module.scss';
 
 const IndexPage = ({ data }) => {
   const { markdownRemark: page } = data;
-  const { frontmatter: { 
-    main,
-    intro,
-    worshipServiceInfo,
-    keyVerse
-  } } = page;
+  const {
+    frontmatter: { main, intro, worshipServiceInfo, keyVerse }
+  } = page;
 
   const {
     heading,
@@ -31,7 +28,9 @@ const IndexPage = ({ data }) => {
       <main className={styles.main}>
         <Header className={styles.header} />
         <div className={styles.mainContent}>
-          <h1 className={`${styles.title} ${styles.fadeInDown}`}>{main.heading}</h1>
+          <h1 className={`${styles.title} ${styles.fadeInDown}`}>
+            {main.heading}
+          </h1>
           <p className={`${styles.lead} ${styles.fadeInUp}`}>{main.lead}</p>
         </div>
       </main>
@@ -45,11 +44,17 @@ const IndexPage = ({ data }) => {
       </section>
       <section id="service-info" className={styles.serviceInfo}>
         <div className={`container ${styles.serviceInfoContainer}`}>
-          <img className={styles.serviceInfoImage} src={bible}/>
+          <img className={styles.serviceInfoImage} src={bible} />
           <div className={styles.serviceInfoContent}>
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
-            <p>{location}<br />({room})<br />{streetAddress}<br />{city}, {state}, {zipCode}</p>
+            <p>
+              {location}
+              <br />({room})<br />
+              {streetAddress}
+              <br />
+              {city}, {state}, {zipCode}
+            </p>
             <DirectionsButton />
           </div>
         </div>
@@ -76,27 +81,27 @@ export const indexPageQuery = graphql`
   query IndexPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        title,
+        title
         main {
-          heading,
+          heading
           lead
-        },
+        }
         intro {
-          heading,
+          heading
           content
-        },
+        }
         worshipServiceInfo {
-          heading,
-          time,
-          location,
-          room,
-          streetAddress,
-          city,
-          state,
+          heading
+          time
+          location
+          room
+          streetAddress
+          city
+          state
           zipCode
-        },
+        }
         keyVerse {
-          verse,
+          verse
           reference
         }
       }

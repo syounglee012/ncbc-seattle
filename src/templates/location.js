@@ -22,14 +22,12 @@ export const LocationPageTemplate = ({ title, content }) => (
 
 const LocationPage = ({ data }) => {
   const { markdownRemark: page } = data;
-  const { frontmatter: { title }, html } = page;
+  const {
+    frontmatter: { title },
+    html
+  } = page;
 
-  return (
-    <LocationPageTemplate
-      title={title}
-      content={html}
-    />
-  );
+  return <LocationPageTemplate title={title} content={html} />;
 };
 
 LocationPage.propTypes = {

@@ -10,14 +10,7 @@ import styles from './Footer.module.scss';
 const Footer = ({ address, email, phone, instagram }) => {
   const currentYear = new Date().getFullYear();
   const ncbc = 'New Covenant Baptist Church';
-  const {
-    name,
-    streetAddress,
-    unit,
-    city,
-    state,
-    zipCode
-  } = address;
+  const { name, streetAddress, unit, city, state, zipCode } = address;
 
   return (
     <footer className={styles.component}>
@@ -25,14 +18,29 @@ const Footer = ({ address, email, phone, instagram }) => {
         <div className={styles.leftCol}>
           <div className={styles.brandContainer}>
             <img src={logo} alt="NCBC Logo" className={styles.logo} />
-            <Link className={styles.brand} to="/">New Covenant Baptist Church</Link>
+            <Link className={styles.brand} to="/">
+              New Covenant Baptist Church
+            </Link>
           </div>
           <address>
-            <span>{name} ({unit})</span>
-            <span>{streetAddress}, {city}, {state} {zipCode}</span>
+            <span>
+              {name} ({unit})
+            </span>
+            <span>
+              {streetAddress}, {city}, {state} {zipCode}
+            </span>
             <a href={`tel:+1${phone}`}>{phone}</a>
           </address>
-          <p className={styles.sbc}>NCBC adheres to the Statement of Faith adopted<br /> by the <a href="http://www.sbc.net/" target="_blank" rel="noopener noreferrer">Southern Baptist Convention</a>.</p>
+          <p className={styles.sbc}>
+            NCBC adheres to the Statement of Faith adopted<br /> by the{' '}
+            <a
+              href="http://www.sbc.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Southern Baptist Convention
+            </a>.
+          </p>
         </div>
         <div className={styles.rightCol}>
           <nav className={styles.footerNav}>
@@ -67,29 +75,43 @@ const Footer = ({ address, email, phone, instagram }) => {
             <div className={styles.footerNavCol}>
               <ul>
                 <li>
-                  <Link to="/devotional" className={styles.footerNavTitle}>Devotional</Link>
+                  <Link to="/devotional" className={styles.footerNavTitle}>
+                    Devotional
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/location" className={styles.footerNavTitle}>Location</Link>
+                  <Link to="/location" className={styles.footerNavTitle}>
+                    Location
+                  </Link>
                 </li>
               </ul>
             </div>
           </nav>
           <div className={styles.socialLinks}>
             <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={instagramIcon} alt="Instagram Icon" className={styles.socialLinkIcon} />
+              <img
+                src={instagramIcon}
+                alt="Instagram Icon"
+                className={styles.socialLinkIcon}
+              />
             </a>
             <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={envelopeIcon} alt="Evenlope Icon" className={styles.socialLinkIcon} />
+              <img
+                src={envelopeIcon}
+                alt="Evenlope Icon"
+                className={styles.socialLinkIcon}
+              />
             </a>
           </div>
         </div>
       </div>
       <div className={styles.copyright}>
-        <p>&copy; {currentYear} {ncbc}. All rights reserved.</p>
+        <p>
+          &copy; {currentYear} {ncbc}. All rights reserved.
+        </p>
       </div>
     </footer>
-  )
+  );
 };
 
 Footer.propTypes = {
@@ -97,6 +119,6 @@ Footer.propTypes = {
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
   instagram: PropTypes.string.isRequired
-}
+};
 
 export default Footer;

@@ -7,9 +7,7 @@ const Page = ({ title, children, className }) => (
   <section className={`${styles.component} ${className}`.trim()}>
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
-      <div className={styles.content}>
-        {children}
-      </div>
+      <div className={styles.content}>{children}</div>
     </div>
   </section>
 );
