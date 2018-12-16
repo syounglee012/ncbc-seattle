@@ -1,17 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AboutPageTemplate } from '../../templates/about';
-import { Redirect } from 'react-router';
 
-const AboutIndexPage = ({ data }) => {
-  const { edges: pages } = data.allMarkdownRemark;
-  const firstPage = pages[0].node;
-  const {
-    frontmatter: { path }
-  } = firstPage;
+class AboutIndexPage extends React.Component {
+  componentWillMount() {
+    const { data, history } = this.props;
+    const { edges: pages } = data.allMarkdownRemark;
+    const firstPage = pages[0].node;
+    const {
+      frontmatter: { path }
+    } = firstPage;
 
-  return <Redirect to={path} />;
-};
+    history.replace(path);
+  }
+
+  render() {
+    const { data } = this.props;
+    const { edges: pages } = data.allMarkdownRemark;
+    const firstPage = pages[0].node;
+    const {
+      frontmatter: { title },
+      html
+    } = firstPage;
+
+    return <AboutPageTemplate pages={pages} title={title} content={html} />;
+  }
+}
 
 AboutIndexPage.propTypes = {
   data: PropTypes.shape({
