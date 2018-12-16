@@ -36,7 +36,7 @@ LocationPage.propTypes = {
 
 export default LocationPage;
 
-export const LocationPageQuery = graphql`
+export const locationPageQuery = graphql`
   query LocationPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html

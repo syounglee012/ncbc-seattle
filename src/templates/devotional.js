@@ -34,7 +34,7 @@ DevotionalPage.propTypes = {
 
 export default DevotionalPage;
 
-export const DevotionalPageQuery = graphql`
+export const devotionalPageQuery = graphql`
   query DevotionalPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
