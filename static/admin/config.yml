@@ -12,11 +12,11 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+      - {label: "Path", name: "path", widget: "hidden", default: "/about"}
       - {label: "Index", name: "index", widget: "number", valueType: "int", min: 1, default: 1}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Side Navigation Link Text", name: "navLinkText", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-  
   - name: ministries
     label: Ministries
     folder: src/pages/ministries
@@ -27,7 +27,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Side Navigation Link Text", name: "navLinkText", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-
   - name: pages
     label: Pages
     files:
@@ -42,16 +41,14 @@ collections:
           - {label: "Intro", name: "intro", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
           - {label: "Worship Service Info", name: "worshipServiceInfo", widget: "object", fields:[{label: "Heading", name: "heading", widget: "string"}, {label: "Time", name: "time", widget: "string"}, {label: "Location", name: "location", widget: "string"}, {label: "Room", name: "room", widget: "string"}, {label: "Street Address", name: "streetAddress", widget: "string"}, {label: "City", name: "city", widget: "string"}, {label: "State", name: "state", widget: "string"}, {label: "Zip Code", name: "zipCode", widget: "string"}]}
           - {label: "Key Verse", name: "keyVerse", widget: "object", fields: [{label: "Verse", name: "verse", widget: "text"}, {label: "Reference", name: "reference", widget: "string"}]}
-      - file: src/pages/ministries/index.md
-        label: Ministries
-        name: ministries
+      - file: src/pages/devotional/index.md
+        label: Devotional
+        name: devotional
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ministries"}
-          - {label: "Path", name: "path", widget: "hidden", default: "/ministries"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "devotional"}
+          - {label: "Path", name: "path", widget: "hidden", default: "/devotional"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Young Adult", name: "youngAdult", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
-          - {label: "College", name: "college", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
-          - {label: "Children", name: "children", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "content", widget: "text"}]}
+          - {label: "Plan", name: "plan", widget: "text"}
       - file: src/pages/location/index.md
         label: Location
         name: location

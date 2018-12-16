@@ -1,9 +1,11 @@
 ---
 templateKey: about
 title: Our Core Values
+path: /about/our-core-values
 navLinkText: Our Core Values
 index: 2
 ---
+
 ### The Word of God
 
 "Martha, Martha," the Lord answered, you are worried and upset about many things, but only one thing is needed. Mary has chosen what is better, and it will not be taken away from her. - Luke 10:41-42

@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MinistriesPageTemplate } from '../../templates/ministries';
+import { Redirect } from 'react-router';
 
 const MinistriesIndexPage = ({ data }) => {
   const { edges: pages } = data.allMarkdownRemark;
   const firstPage = pages[0].node;
   const {
-    frontmatter: { title },
-    html
+    frontmatter: { path }
   } = firstPage;
 
-  return <MinistriesPageTemplate pages={pages} title={title} content={html} />;
+  return <Redirect to={path} />;
 };
 
 MinistriesIndexPage.propTypes = {
@@ -39,6 +38,7 @@ export const ministriesPageQuery = graphql`
           frontmatter {
             templateKey
             title
+            path
             navLinkText
             index
           }
