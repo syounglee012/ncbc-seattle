@@ -18,7 +18,7 @@ class MinistriesIndexPage extends React.Component {
   }
 }
 
-AboutIndexPage.propTypes = {
+MinistriesIndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
