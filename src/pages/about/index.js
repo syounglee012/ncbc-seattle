@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AboutPageTemplate } from '../../templates/about';
 
 class AboutIndexPage extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     const { data, history } = this.props;
     const { edges: pages } = data.allMarkdownRemark;
     const firstPage = pages[0].node;
@@ -15,15 +14,7 @@ class AboutIndexPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
-    const { edges: pages } = data.allMarkdownRemark;
-    const firstPage = pages[0].node;
-    const {
-      frontmatter: { title },
-      html
-    } = firstPage;
-
-    return <AboutPageTemplate pages={pages} title={title} content={html} />;
+    return null;
   }
 }
 
