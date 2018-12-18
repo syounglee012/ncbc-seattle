@@ -15,8 +15,11 @@ const Layout = ({ children, data, location }) => {
       <Helmet
         title={title}
         meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' }
+          {
+            name: 'description',
+            content: 'Welcome to New Covenant Baptist Church!'
+          },
+          { name: 'keywords', content: 'baptist, church, seattle' }
         ]}
         link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
       />

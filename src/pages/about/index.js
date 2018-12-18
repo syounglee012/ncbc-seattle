@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class AboutIndexPage extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     const { data, history } = this.props;
     const { edges: pages } = data.allMarkdownRemark;
     const firstPage = pages[0].node;
