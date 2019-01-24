@@ -48,7 +48,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "devotional"}
           - {label: "Path", name: "path", widget: "hidden", default: "/devotional"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Plan", name: "plan", widget: "text"}
+          - {label: "Daily Devotion Passages", name: "passagesUrl", widget: "file"}
       - file: src/pages/location/index.md
         label: Location
         name: location

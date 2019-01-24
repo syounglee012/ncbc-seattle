@@ -5,28 +5,60 @@ import Page from '../components/Page/Page';
 
 import styles from './devotional.module.scss';
 
-export const DevotionalPageTemplate = ({ title, plan, content }) => (
-  <Page title="Daily Devotion" className={styles.component}>
-    <Helmet title={`${title} | Daily Devotion`} />
-    <article className={styles.article}>
-      <h2 className={styles.articleTitle}>{title}</h2>
-      <div
-        className={styles.articleContent}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </article>
-  </Page>
-);
-
-const DevotionalPage = ({ data }) => {
-  const { markdownRemark: page } = data;
-  const {
-    frontmatter: { title, plan },
-    html
-  } = page;
-
-  return <DevotionalPageTemplate title={title} content={html} plan={plan} />;
+export const DevotionalPageTemplate = ({ title, passage, content }) => {
+  return (
+    <Page title="Daily Devotion" className={styles.component}>
+      <Helmet title={`${title} | Daily Devotion`} />
+      <article className={styles.article}>
+        <h2 className={styles.articleTitle}>{title}</h2>
+        {/* <div
+          className={styles.articleContent}
+          dangerouslySetInnerHTML={{ __html: content }}
+        /> */}
+        <div className={styles.articleContent}>
+          {`Today's passage: ${passage}`}
+        </div>
+      </article>
+    </Page>
+  );
 };
+
+class DevotionalPage extends React.Component {
+  state = {
+    passages: undefined
+  };
+
+  componentDidMount() {
+    const { markdownRemark: page } = this.props.data;
+
+    fetch(page.frontmatter.passagesUrl)
+      .then(response => response.json())
+      .then(passages => {
+        const today = new Date();
+        const passagesForCurrentMonth = passages[today.getMonth()];
+        const passage = passagesForCurrentMonth[today.getDate() - 1];
+        this.setState({ passage });
+      })
+      .catch(error => console.warn('Error', error.message));
+  }
+
+  render() {
+    const { markdownRemark: page, html } = this.props.data;
+    const { passage } = this.state;
+
+    if (!passage) {
+      return null;
+    }
+
+    return (
+      <DevotionalPageTemplate
+        title={page.frontmatter.title}
+        content={html}
+        passage={this.state.passage}
+      />
+    );
+  }
+}
 
 DevotionalPage.propTypes = {
   data: PropTypes.object.isRequired
@@ -40,7 +72,7 @@ export const devotionalPageQuery = graphql`
       html
       frontmatter {
         title
-        plan
+        passagesUrl
       }
     }
   }

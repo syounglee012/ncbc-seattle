@@ -1,6 +1,6 @@
 ---
-title: Come and Visit Us
 templateKey: location
+title: Come and Visit Us
 path: /location
 ---
 
