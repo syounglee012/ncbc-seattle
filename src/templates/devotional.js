@@ -6,18 +6,25 @@ import Page from '../components/Page/Page';
 import styles from './devotional.module.scss';
 
 export const DevotionalPageTemplate = ({ title, passage, content }) => {
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    weekday: 'long'
+  };
+  const date = new Date().toLocaleDateString('en-US', options);
+
   return (
     <Page title="Daily Devotion" className={styles.component}>
       <Helmet title={`${title} | Daily Devotion`} />
       <article className={styles.article}>
-        <h2 className={styles.articleTitle}>{title}</h2>
+        <p className={styles.date}>{date}</p>
+        <h2 className={styles.articleTitle}>{passage}</h2>
         {/* <div
           className={styles.articleContent}
           dangerouslySetInnerHTML={{ __html: content }}
         /> */}
-        <div className={styles.articleContent}>
-          {`Today's passage: ${passage}`}
-        </div>
+        <div className={styles.articleContent}>Passage placeholder</div>
       </article>
     </Page>
   );
