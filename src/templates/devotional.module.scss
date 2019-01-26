@@ -1,10 +1,15 @@
 :local {
+  b {
+    font-weight: 400;
+  }
+
   .article {
     width: 100%;
   }
 
   .articleTitle {
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 36px;
     font-weight: 300;
   }
@@ -16,8 +21,8 @@
 
   .date {
     margin-top: 0;
+    margin-bottom: 1.8675rem;
     font-weight: 100;
-    font-size: 18px;
     font-style: italic;
     color: #777;
   }
