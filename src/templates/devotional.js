@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import Page from '../components/Page/Page';
+import Headphones from '../img/svg/headphones.svg';
 
 import styles from './devotional.module.scss';
 
-const ESV_API_ENDPOINT = `https://api.esv.org/v3/passage/html/`;
-const API_KEY = `e774b4f993c184ef6c9a3165f672089e558a6add`;
+const ESV_API_URL = `https://api.esv.org/v3/passage/`;
+const ESV_AUDIO_URL = 'https://audio.esv.org/hw/';
+const API_KEY = `7c583859be1da65dffd0cfe7bcc5535514156b85`;
 const DAY = 60 * 60 * 24 * 1000;
 
 export class DevotionalPageTemplate extends React.Component {
   state = {
     passage: '',
-    text: ''
+    text: '',
+    audio: null
   };
 
   static defaultProps = {
@@ -21,40 +24,48 @@ export class DevotionalPageTemplate extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchPassageText();
+    this.fetchDevotionalText();
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.date !== prevProps.date) {
-      this.fetchPassageText();
+      this.fetchDevotionalText();
     }
   }
 
-  fetchPassageText() {
+  fetchDevotionalText() {
     fetch(this.props.passagesUrl)
       .then(response => response.json())
       .then(passages => {
         const { date } = this.props;
         const passagesForCurrentMonth = passages[date.getMonth()];
         const passage = passagesForCurrentMonth[date.getDate() - 1];
-        this.setState({ passage }, () => this.getPassageText(passage));
+
+        return Promise.all([
+          this.queryAPI(`html/?q=${passage}&include-passage-references=false`)
+          // this.queryAPI(`audio/?q=${passage}`)
+        ]).then(([html, audio]) => {
+          this.setState({
+            passage,
+            text: html.passages,
+            audio
+          });
+        });
       })
       .catch(error => console.warn('Error', error.message));
   }
 
-  getPassageText(passage) {
-    const url = `${ESV_API_ENDPOINT}?q=${passage}&include-passage-references=false`;
+  queryAPI(endpoint) {
+    const url = `${ESV_API_URL}${endpoint}`;
     const options = {
-      method: 'GET',
       headers: {
         Authorization: `Token ${API_KEY}`
       }
     };
 
-    fetch(url, options)
-      .then(response => response.json())
-      .then(({ passages }) => this.setState({ text: passages }))
-      .catch(error => console.warn('Error', error.message));
+    return fetch(url, options).then(
+      response => (response.ok ? response.json() : Promise.reject(response))
+    );
   }
 
   render() {
@@ -73,6 +84,14 @@ export class DevotionalPageTemplate extends React.Component {
         <Helmet title={`${this.props.title} | Daily Devotion`} />
         <article className={styles.article}>
           <h2 className={styles.articleTitle}>{passage}</h2>
+          <a
+            href={`${ESV_AUDIO_URL}${encodeURIComponent(passage)}.mp3`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.audioLink}
+          >
+            <Headphones className={styles.headphones} />
+          </a>
           <p className={styles.date}>
             {date.toLocaleDateString('en-US', options)}
           </p>
@@ -114,14 +133,6 @@ class DevotionalPage extends React.Component {
   state = {
     date: new Date()
   };
-
-  componentDidMount() {
-    const { state } = this.props.location;
-
-    if (state && state.date) {
-      this.setState({ date: new Date() });
-    }
-  }
 
   componentDidUpdate(prevProps) {
     const { state: currentState } = this.props.location;

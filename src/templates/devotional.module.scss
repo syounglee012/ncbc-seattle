@@ -8,10 +8,9 @@
   }
 
   .articleTitle {
-    margin-top: 0;
-    margin-bottom: 0;
     font-size: 36px;
     font-weight: 300;
+    display: inline;
   }
 
   .articleContent {
@@ -31,5 +30,15 @@
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+  }
+
+  .headphones {
+    path {
+      fill: #333;
+    }
+  }
+
+  .audioLink {
+    margin-left: 12px;
   }
 }

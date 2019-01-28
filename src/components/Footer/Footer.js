@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import instagramIcon from '../../img/svg/instagram-icon.svg';
-import envelopeIcon from '../../img/svg/envelope-icon.svg';
-import logo from '../../img/svg/box-logo.svg';
+import InstagramIcon from '../../img/svg/instagram.svg';
+import EnvelopeIcon from '../../img/svg/envelope.svg';
+import Logo from '../../img/svg/box-logo.svg';
 
 import styles from './Footer.module.scss';
 
@@ -17,7 +17,7 @@ const Footer = ({ address, email, phone, instagram }) => {
       <div className={`container ${styles.footerContent}`}>
         <div className={styles.leftCol}>
           <div className={styles.brandContainer}>
-            <img src={logo} alt="NCBC Logo" className={styles.logo} />
+            <Logo className={styles.logo} />
             <Link className={styles.brand} to="/">
               New Covenant Baptist Church
             </Link>
@@ -89,18 +89,10 @@ const Footer = ({ address, email, phone, instagram }) => {
           </nav>
           <div className={styles.socialLinks}>
             <a href="/" target="_blank" rel="noopener noreferrer">
-              <img
-                src={instagramIcon}
-                alt="Instagram Icon"
-                className={styles.socialLinkIcon}
-              />
+              <InstagramIcon className={styles.socialLinkIcon} />
             </a>
             <a href="/" target="_blank" rel="noopener noreferrer">
-              <img
-                src={envelopeIcon}
-                alt="Evenlope Icon"
-                className={styles.socialLinkIcon}
-              />
+              <EnvelopeIcon className={styles.socialLinkIcon} />
             </a>
           </div>
         </div>
