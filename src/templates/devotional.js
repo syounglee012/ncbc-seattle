@@ -9,7 +9,7 @@ import styles from './devotional.module.scss';
 
 const ESV_API_URL = `https://api.esv.org/v3/passage/`;
 const ESV_AUDIO_URL = 'https://audio.esv.org/hw/';
-const API_KEY = `7c583859be1da65dffd0cfe7bcc5535514156b85`;
+const ESV_API_KEY = process.env.ESV_API_KEY;
 const DAY = 60 * 60 * 24 * 1000;
 
 export class DevotionalPageTemplate extends React.Component {
@@ -43,7 +43,7 @@ export class DevotionalPageTemplate extends React.Component {
 
         return Promise.all([
           this.queryAPI(`html/?q=${passage}&include-passage-references=false`)
-          // this.queryAPI(`audio/?q=${passage}`)
+          // this.queryAPI(`audio/?q=${passage}`) // 405 (Method Not Allowed) and CORS error while redirecting
         ]).then(([html, audio]) => {
           this.setState({
             passage,
@@ -59,7 +59,7 @@ export class DevotionalPageTemplate extends React.Component {
     const url = `${ESV_API_URL}${endpoint}`;
     const options = {
       headers: {
-        Authorization: `Token ${API_KEY}`
+        Authorization: `Token ${ESV_API_KEY}`
       }
     };
 
