@@ -9,7 +9,7 @@ import styles from './devotional.module.scss';
 
 const ESV_API_URL = `https://api.esv.org/v3/passage/`;
 const ESV_AUDIO_URL = 'https://audio.esv.org/hw/';
-const ESV_API_KEY = process.env.ESV_API_KEY;
+const ESV_API_KEY = process.env.GATSBY_ESV_API_KEY;
 const DAY = 60 * 60 * 24 * 1000;
 
 export class DevotionalPageTemplate extends React.Component {
