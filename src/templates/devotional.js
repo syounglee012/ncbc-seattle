@@ -40,7 +40,7 @@ export class DevotionalPageTemplate extends React.Component {
         const passagesForCurrentMonth = passages[date.getMonth()];
         const passage = passagesForCurrentMonth[date.getDate() - 1];
 
-        this.queryAPI(
+        return this.queryAPI(
           `html/?q=${passage}&include-passage-references=false`
         ).then(({ passages: text }) => {
           this.setState({
