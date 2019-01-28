@@ -15,8 +15,7 @@ const DAY = 60 * 60 * 24 * 1000;
 export class DevotionalPageTemplate extends React.Component {
   state = {
     passage: '',
-    text: '',
-    audio: null
+    text: ''
   };
 
   static defaultProps = {
@@ -41,14 +40,12 @@ export class DevotionalPageTemplate extends React.Component {
         const passagesForCurrentMonth = passages[date.getMonth()];
         const passage = passagesForCurrentMonth[date.getDate() - 1];
 
-        return Promise.all([
-          this.queryAPI(`html/?q=${passage}&include-passage-references=false`)
-          // this.queryAPI(`audio/?q=${passage}`) // 405 (Method Not Allowed) and CORS error while redirecting
-        ]).then(([html, audio]) => {
+        this.queryAPI(
+          `html/?q=${passage}&include-passage-references=false`
+        ).then(({ passages: text }) => {
           this.setState({
             passage,
-            text: html.passages,
-            audio
+            text
           });
         });
       })
