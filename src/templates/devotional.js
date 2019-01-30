@@ -20,7 +20,7 @@ export class DevotionalPageTemplate extends React.Component {
   state = {
     passage: '',
     text: '',
-    loading: false
+    loading: true
   };
 
   static defaultProps = {
@@ -38,7 +38,9 @@ export class DevotionalPageTemplate extends React.Component {
   }
 
   fetchDevotionalText() {
-    this.setState({ loading: true });
+    if (!this.state.loading) {
+      this.setState({ loading: true });
+    }
 
     fetch(this.props.passagesUrl)
       .then(response => response.json())
@@ -88,22 +90,24 @@ export class DevotionalPageTemplate extends React.Component {
       <Page title="Daily Devotion" className={styles.component}>
         <Helmet title={`${this.props.title} | Daily Devotion`} />
         <article className={styles.article}>
-          {loading ? (
-            <SkeletonElement
-              className={`${styles.articleTitleSkeleton}`}
-              type="h2"
-            />
-          ) : (
-            <h2 className={styles.articleTitle}>{passage}</h2>
-          )}
-          <a
-            href={`${ESV_AUDIO_URL}${encodeURIComponent(passage)}.mp3`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.audioLink}
-          >
-            <Headphones className={styles.headphones} />
-          </a>
+          <div className={styles.titleWrapper}>
+            {loading ? (
+              <SkeletonElement
+                className={`${styles.articleTitleSkeleton}`}
+                type="h2"
+              />
+            ) : (
+              <h2 className={styles.articleTitle}>{passage}</h2>
+            )}
+            <a
+              href={`${ESV_AUDIO_URL}${encodeURIComponent(passage)}.mp3`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.audioLink}
+            >
+              <Headphones className={styles.headphones} />
+            </a>
+          </div>
           <p className={styles.date}>
             {date.toLocaleDateString('en-US', options)}
           </p>
