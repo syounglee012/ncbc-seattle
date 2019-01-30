@@ -12,10 +12,15 @@ const ESV_AUDIO_URL = 'https://audio.esv.org/hw/';
 const ESV_API_KEY = process.env.GATSBY_ESV_API_KEY;
 const DAY = 60 * 60 * 24 * 1000;
 
+const SkeletonElement = ({ children, type, ...rest }) => {
+  return React.createElement(type, { ...rest }, children);
+};
+
 export class DevotionalPageTemplate extends React.Component {
   state = {
     passage: '',
-    text: ''
+    text: '',
+    loading: false
   };
 
   static defaultProps = {
@@ -33,6 +38,8 @@ export class DevotionalPageTemplate extends React.Component {
   }
 
   fetchDevotionalText() {
+    this.setState({ loading: true });
+
     fetch(this.props.passagesUrl)
       .then(response => response.json())
       .then(passages => {
@@ -49,7 +56,8 @@ export class DevotionalPageTemplate extends React.Component {
           });
         });
       })
-      .catch(error => console.warn('Error', error.message));
+      .catch(error => console.warn('Error', error.message))
+      .finally(() => this.setState({ loading: false }));
   }
 
   queryAPI(endpoint) {
@@ -73,14 +81,21 @@ export class DevotionalPageTemplate extends React.Component {
       weekday: 'long'
     };
 
-    const { passage, text } = this.state;
+    const { passage, text, loading } = this.state;
     const { date } = this.props;
 
     return (
       <Page title="Daily Devotion" className={styles.component}>
         <Helmet title={`${this.props.title} | Daily Devotion`} />
         <article className={styles.article}>
-          <h2 className={styles.articleTitle}>{passage}</h2>
+          {loading ? (
+            <SkeletonElement
+              className={`${styles.articleTitleSkeleton}`}
+              type="h2"
+            />
+          ) : (
+            <h2 className={styles.articleTitle}>{passage}</h2>
+          )}
           <a
             href={`${ESV_AUDIO_URL}${encodeURIComponent(passage)}.mp3`}
             target="_blank"
@@ -92,10 +107,65 @@ export class DevotionalPageTemplate extends React.Component {
           <p className={styles.date}>
             {date.toLocaleDateString('en-US', options)}
           </p>
-          <div
-            className={styles.articleContent}
-            dangerouslySetInnerHTML={{ __html: text }}
-          />
+          <div className={styles.articleContent}>
+            {loading ? (
+              <div>
+                <SkeletonElement
+                  className={`${styles.subTitleSkeleton}`}
+                  type="h3"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.long}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.long}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.short}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.subTitleSkeleton}`}
+                  type="h3"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.long}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.long}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
+                  type="p"
+                />
+                <SkeletonElement
+                  className={`${styles.paragraphSkeleton} ${styles.short}`}
+                  type="p"
+                />
+              </div>
+            ) : (
+              <div
+                className={styles.articleContent}
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            )}
+          </div>
           <div className={styles.passageNav}>
             <Link
               rel="prev"

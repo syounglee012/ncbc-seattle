@@ -7,15 +7,48 @@
     width: 100%;
   }
 
-  .articleTitle {
+  .articleTitle,
+  .articleTitleSkeleton {
     font-size: 36px;
     font-weight: 300;
     display: inline;
   }
 
+  .articleTitleSkeleton {
+    display: inline-block;
+    width: 250px;
+    height: 49px;
+    margin: 0;
+  }
+
   .articleContent {
     font-size: 18px;
     font-weight: 300;
+  }
+
+  .subTitleSkeleton {
+    display: inline-block;
+    width: 400px;
+    height: 31px;
+  }
+
+  .paragraphSkeleton {
+    height: 24px;
+
+    &.long {
+      width: 90%;
+      height: 24px;
+    }
+
+    &.medium {
+      width: 76%;
+      height: 24px;
+    }
+
+    &.short {
+      width: 47%;
+      height: 24px;
+    }
   }
 
   .date {
@@ -40,5 +73,24 @@
 
   .audioLink {
     margin-left: 12px;
+  }
+
+  .articleTitleSkeleton,
+  .subTitleSkeleton,
+  .paragraphSkeleton {
+    border-radius: 2px;
+    background: linear-gradient(to right, #fbfbfb 0, #f4f4f4 50%, #fbfbfb);
+    background-size: 1000px;
+    animation: loading 2s linear 0s infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
   }
 }
