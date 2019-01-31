@@ -30,7 +30,7 @@
   }
 
   .subTitleSkeleton {
-    display: inline-block;
+    display: block;
     width: 400px;
     height: 31px;
   }
@@ -40,17 +40,19 @@
 
     &.long {
       width: 90%;
-      height: 24px;
     }
 
     &.medium {
       width: 76%;
-      height: 24px;
     }
 
     &.short {
       width: 47%;
-      height: 24px;
+    }
+
+    &.date {
+      width: 210px;
+      display: block;
     }
   }
 

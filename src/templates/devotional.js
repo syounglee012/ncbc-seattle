@@ -16,6 +16,54 @@ const SkeletonElement = ({ children, type, ...rest }) => {
   return React.createElement(type, { ...rest }, children);
 };
 
+const SkeletonScreen = () => (
+  <article className={styles.article}>
+    <div className={styles.titleWrapper}>
+      <SkeletonElement className={`${styles.articleTitleSkeleton}`} type="h2" />
+    </div>
+    <SkeletonElement
+      className={`${styles.paragraphSkeleton} ${styles.date}`}
+      type="p"
+    />
+    <div className={styles.articleContent}>
+      <SkeletonElement className={`${styles.subTitleSkeleton}`} type="h3" />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.long}`}
+        type="p"
+      />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.medium}`}
+        type="p"
+      />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.long}`}
+        type="p"
+      />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.medium}`}
+        type="p"
+      />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.short}`}
+        type="p"
+      />
+      <SkeletonElement className={`${styles.subTitleSkeleton}`} type="h3" />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.medium}`}
+        type="p"
+      />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.medium}`}
+        type="p"
+      />
+      <SkeletonElement
+        className={`${styles.paragraphSkeleton} ${styles.short}`}
+        type="p"
+      />
+    </div>
+  </article>
+);
+
 export class DevotionalPageTemplate extends React.Component {
   state = {
     passage: '',
@@ -89,112 +137,56 @@ export class DevotionalPageTemplate extends React.Component {
     return (
       <Page title="Daily Devotion" className={styles.component}>
         <Helmet title={`${this.props.title} | Daily Devotion`} />
-        <article className={styles.article}>
-          <div className={styles.titleWrapper}>
-            {loading ? (
-              <SkeletonElement
-                className={`${styles.articleTitleSkeleton}`}
-                type="h2"
-              />
-            ) : (
+        {loading ? (
+          <SkeletonScreen />
+        ) : (
+          <article className={styles.article}>
+            <div className={styles.titleWrapper}>
               <h2 className={styles.articleTitle}>{passage}</h2>
-            )}
-            <a
-              href={`${ESV_AUDIO_URL}${encodeURIComponent(passage)}.mp3`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.audioLink}
-            >
-              <Headphones className={styles.headphones} />
-            </a>
-          </div>
-          <p className={styles.date}>
-            {date.toLocaleDateString('en-US', options)}
-          </p>
-          <div className={styles.articleContent}>
-            {loading ? (
-              <div>
-                <SkeletonElement
-                  className={`${styles.subTitleSkeleton}`}
-                  type="h3"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.long}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.long}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.short}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.subTitleSkeleton}`}
-                  type="h3"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.long}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.long}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.medium}`}
-                  type="p"
-                />
-                <SkeletonElement
-                  className={`${styles.paragraphSkeleton} ${styles.short}`}
-                  type="p"
-                />
-              </div>
-            ) : (
+              <a
+                href={`${ESV_AUDIO_URL}${encodeURIComponent(passage)}.mp3`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.audioLink}
+              >
+                <Headphones className={styles.headphones} />
+              </a>
+            </div>
+            <p className={styles.date}>
+              {date.toLocaleDateString('en-US', options)}
+            </p>
+            <div className={styles.articleContent}>
               <div
                 className={styles.articleContent}
                 dangerouslySetInnerHTML={{ __html: text }}
               />
-            )}
-          </div>
-          <div className={styles.passageNav}>
-            <Link
-              rel="prev"
-              to={{
-                pathname: '/devotional/',
-                state: {
-                  date: new Date(date.getTime() - DAY)
-                }
-              }}
-            >
-              ← Previous
-            </Link>
-            <Link
-              rel="next"
-              to={{
-                pathname: '/devotional/',
-                state: {
-                  date: new Date(date.getTime() + DAY)
-                }
-              }}
-            >
-              Next →
-            </Link>
-          </div>
-        </article>
+            </div>
+            <div className={styles.passageNav}>
+              <Link
+                rel="prev"
+                to={{
+                  pathname: '/devotional/',
+                  state: {
+                    date: new Date(date.getTime() - DAY)
+                  }
+                }}
+              >
+                ← Previous
+              </Link>
+              <Link
+                rel="next"
+                to={{
+                  pathname: '/devotional/',
+                  state: {
+                    date: new Date(date.getTime() + DAY)
+                  }
+                }}
+              >
+                Next →
+              </Link>
+            </div>
+          </article>
+        )}
       </Page>
     );
   }
