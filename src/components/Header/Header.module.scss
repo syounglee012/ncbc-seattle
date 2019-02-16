@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     margin: 8px 0;
+    height: 27px;
   }
 
   .brand {
@@ -39,5 +40,11 @@
     width: 48px;
     height: 100%;
     margin: 0;
+  }
+
+  @media only screen and (max-width: 440px) {
+    .brand {
+      display: none;
+    }
   }
 }
