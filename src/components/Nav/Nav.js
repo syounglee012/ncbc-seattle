@@ -8,10 +8,34 @@ class Nav extends React.Component {
     showLinks: false
   };
 
-  handleHamburgerMenuClick = () =>
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleMouseDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleMouseDown);
+  }
+
+  handleMouseDown = event => {
+    if (
+      this.navRef &&
+      !this.navRef.contains(event.target) &&
+      (this.hamburgerMenuRef && !this.hamburgerMenuRef.contains(event.target))
+    ) {
+      this.setState(
+        ({ showLinks }) => (showLinks ? { showLinks: false } : null)
+      );
+    }
+  };
+
+  handleHamburgerMenuClick = event => {
     this.setState(({ showLinks }) => ({
       showLinks: !showLinks
     }));
+  };
+
+  setNavRef = ref => (this.navRef = ref);
+  setHamburgerMenuRef = ref => (this.hamburgerMenuRef = ref);
 
   render() {
     const { showLinks } = this.state;
@@ -19,6 +43,7 @@ class Nav extends React.Component {
     return (
       <div className={styles.component}>
         <button
+          ref={this.setHamburgerMenuRef}
           className={styles.navbarToggle}
           aria-label="Menu"
           onClick={this.handleHamburgerMenuClick}
@@ -29,6 +54,7 @@ class Nav extends React.Component {
         </button>
 
         <nav
+          ref={this.setNavRef}
           className={`${styles.navbar} ${
             showLinks ? styles.navbarToggleShow : ''
           }`.trim()}
