@@ -7,36 +7,59 @@ import favicon from '../img/favicon.png';
 
 import './index.scss';
 
-const Layout = ({ children, data, location }) => {
-  const { title, address, phone, email, instagram } = data.site.siteMetadata;
+class Layout extends React.Component {
+  componentDidMount() {
+    window.addEventListener('mousedown', this.handleMouseDown);
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
 
-  return (
-    <div>
-      <Helmet
-        title={title}
-        meta={[
-          {
-            name: 'description',
-            content: 'Welcome to New Covenant Baptist Church!'
-          },
-          { name: 'keywords', content: 'baptist, church, seattle' }
-        ]}
-        link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
-      />
+  componentWillUnmount() {
+    window.removeEventListener('mousedown', this.handleMouseDown);
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
 
-      {location.pathname === '/' ? children() : <Header />}
+  handleMouseDown() {
+    document.body.classList.add('usingMouse');
+  }
 
-      {location.pathname !== '/' && children()}
+  handleKeyDown() {
+    document.body.classList.remove('usingMouse');
+  }
 
-      <Footer
-        address={address}
-        phone={phone}
-        email={email}
-        instagram={instagram}
-      />
-    </div>
-  );
-};
+  render() {
+    const { data, location, children } = this.props;
+    const { title, address, phone, email, instagram } = data.site.siteMetadata;
+
+    return (
+      <div>
+        <Helmet
+          title={title}
+          meta={[
+            {
+              name: 'description',
+              content: 'Welcome to New Covenant Baptist Church!'
+            },
+            { name: 'keywords', content: 'baptist, church, seattle' }
+          ]}
+          link={[
+            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
+          ]}
+        />
+
+        {location.pathname === '/' ? children() : <Header />}
+
+        {location.pathname !== '/' && children()}
+
+        <Footer
+          address={address}
+          phone={phone}
+          email={email}
+          instagram={instagram}
+        />
+      </div>
+    );
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.func

@@ -25,11 +25,10 @@
     }
   }
 
-  .linkToggle {
+  .navbarToggle {
     border: none;
     cursor: pointer;
     background: none;
-    outline: none;
     padding: 0;
     display: none;
   }
@@ -46,12 +45,39 @@
   }
 
   @media only screen and (max-width: 800px) {
-    .linkToggle {
+    .navbar {
+      opacity: 0;
+
+      ul {
+        display: none;
+      }
+    }
+
+    .navbarToggle {
       display: block;
     }
 
-    nav {
-      display: none;
+    .navbarToggleShow {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      padding: 0 32px;
+      border-bottom: 1px solid #e8e8e8;
+      background: #fff;
+      opacity: 1;
+      transition: opacity 0.3s 0.1s;
+      top: 75px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 12px;
+      }
+
+      li {
+        margin: 12px 0;
+      }
     }
   }
 }
