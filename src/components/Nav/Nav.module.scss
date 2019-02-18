@@ -59,7 +59,7 @@
 
     .navbarToggleShow {
       display: block;
-      position: fixed;
+      position: absolute;
       left: 0;
       right: 0;
       padding: 0 32px;
@@ -67,7 +67,7 @@
       background: #fff;
       opacity: 1;
       transition: opacity 0.3s 0.1s;
-      top: 75px;
+      margin-top: 46px;
 
       ul {
         display: flex;
