@@ -34,6 +34,8 @@ class Nav extends React.Component {
     }));
   };
 
+  handleLinkClick = () => this.setState({ showLinks: false });
+
   setNavRef = ref => (this.navRef = ref);
   setHamburgerMenuRef = ref => (this.hamburgerMenuRef = ref);
 
@@ -61,16 +63,24 @@ class Nav extends React.Component {
         >
           <ul>
             <li>
-              <Link to="/about/">About</Link>
+              <Link to="/about/" onClick={this.handleLinkClick}>
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/ministries/">Ministries</Link>
+              <Link to="/ministries/" onClick={this.handleLinkClick}>
+                Ministries
+              </Link>
             </li>
             <li>
-              <Link to="/devotional/">Devotional</Link>
+              <Link to="/devotional/" onClick={this.handleLinkClick}>
+                Devotional
+              </Link>
             </li>
             <li>
-              <Link to="/location/">Location</Link>
+              <Link to="/location/" onClick={this.handleLinkClick}>
+                Location
+              </Link>
             </li>
           </ul>
         </nav>
