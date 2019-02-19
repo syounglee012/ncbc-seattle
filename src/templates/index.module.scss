@@ -114,9 +114,17 @@
     animation-fill-mode: both;
   }
 
-  @media only screen and (max-width: 823px) {
+  @media only screen and (max-width: 900px) {
     .header {
       margin-top: 0;
+    }
+
+    .title {
+      font-size: 48px;
+    }
+
+    .lead {
+      font-size: 18px;
     }
 
     .mainContent {

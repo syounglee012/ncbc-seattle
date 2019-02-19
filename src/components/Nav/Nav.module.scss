@@ -31,11 +31,12 @@
     background: none;
     padding: 0;
     display: none;
+    z-index: 20;
   }
 
   .hamburgerLine {
     height: 3px;
-    width: 21px;
+    width: 24px;
     display: block;
     background-color: #555;
     transition: all 0.3s ease 0s;
@@ -45,7 +46,7 @@
     }
   }
 
-  @media only screen and (max-width: 823px) {
+  @media only screen and (max-width: 900px) {
     .navbar {
       opacity: 0;
 
@@ -63,13 +64,13 @@
       position: absolute;
       left: 0;
       right: 0;
-      padding: 0 32px;
+      padding: 45px 32px 0;
       border-bottom: 1px solid #e8e8e8;
       background: #fff;
       opacity: 1;
-      transition: opacity 0.3s;
-      margin-top: 46px;
+      transition: opacity 0.2s;
       z-index: 10;
+      transition-delay: 0s;
 
       ul {
         display: flex;
@@ -83,6 +84,8 @@
     }
 
     .navbarToggleShow .hamburgerLine {
+      width: 21px;
+
       &:first-child {
         transform: rotate(45deg);
         transform-origin: top left;
