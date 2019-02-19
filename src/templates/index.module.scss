@@ -127,9 +127,27 @@
       font-size: 18px;
     }
 
+    .main {
+      background-attachment: scroll;
+      background-position: initial;
+    }
+
     .mainContent {
       margin-top: 0;
       padding: 0 24px;
+    }
+
+    .serviceInfoContainer {
+      flex-direction: column;
+    }
+
+    .serviceInfoContent {
+      margin-right: 0;
+    }
+
+    .serviceInfoImage {
+      transform: rotate(-4deg);
+      margin: -210px 0 24px;
     }
   }
 }
