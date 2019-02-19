@@ -32,7 +32,7 @@ const Footer = ({ address, email, phone, instagram }) => {
             <a href={`tel:+1${phone}`}>{phone}</a>
           </address>
           <p className={styles.sbc}>
-            NCBC adheres to the Statement of Faith adopted<br /> by the{' '}
+            NCBC adheres to the Statement of Faith adopted by the{' '}
             <a
               href="http://www.sbc.net/"
               target="_blank"
