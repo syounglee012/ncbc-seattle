@@ -39,23 +39,23 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03);
     text-align: center;
   }
-  
+
   .lead {
     font-size: 22px;
-    letter-spacing: .03em;
+    letter-spacing: 0.03em;
     margin: 8px 0;
     font-weight: 300;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     text-align: center;
     color: #333;
   }
-  
+
   .logo {
     width: 50px;
     height: 100%;
     margin: 0;
   }
-  
+
   .introContent {
     max-width: 700px;
   }
@@ -86,7 +86,6 @@
     margin-right: 60px;
   }
 
-
   .keyVerseContent {
     text-align: center;
   }
@@ -95,13 +94,13 @@
     font-weight: 300;
     font-style: italic;
     font-size: 32px;
-    letter-spacing: .02em;
+    letter-spacing: 0.02em;
   }
 
   .reference {
     letter-spacing: 0.08em;
   }
-  
+
   .fadeInDown {
     animation-duration: 1s;
     animation-name: fadeInDown;
@@ -113,6 +112,17 @@
     animation-delay: 0.5s;
     animation-name: fadeInUp;
     animation-fill-mode: both;
+  }
+
+  @media only screen and (max-width: 823px) {
+    .header {
+      margin-top: 0;
+    }
+
+    .mainContent {
+      margin-top: 0;
+      padding: 0 24px;
+    }
   }
 }
 
@@ -133,7 +143,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
-  
+
   100% {
     opacity: 1;
     transform: translateY(0);

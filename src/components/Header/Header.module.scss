@@ -36,6 +36,10 @@
     }
   }
 
+  .brandName {
+    margin-left: 10px;
+  }
+
   .logo {
     width: 48px;
     height: 100%;
@@ -43,7 +47,7 @@
   }
 
   @media only screen and (max-width: 440px) {
-    .brand {
+    .brandName {
       display: none;
     }
   }

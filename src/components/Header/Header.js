@@ -10,9 +10,9 @@ const Header = ({ className }) => (
   <header className={`${styles.component} ${className}`.trim()}>
     <div className={styles.navContainer}>
       <div className={styles.brandContainer}>
-        <Logo className={styles.logo} />
         <Link className={styles.brand} to="/">
-          New Covenant Baptist Church
+          <Logo className={styles.logo} />
+          <span className={styles.brandName}>New Covenant Baptist Church</span>
         </Link>
       </div>
       <Nav />

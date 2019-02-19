@@ -44,7 +44,7 @@
     }
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 823px) {
     .navbar {
       opacity: 0;
 
@@ -66,8 +66,9 @@
       border-bottom: 1px solid #e8e8e8;
       background: #fff;
       opacity: 1;
-      transition: opacity 0.3s 0.1s;
+      transition: opacity 0.3s;
       margin-top: 46px;
+      z-index: 10;
 
       ul {
         display: flex;
