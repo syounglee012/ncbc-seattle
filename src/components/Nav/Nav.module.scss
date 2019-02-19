@@ -35,9 +35,10 @@
 
   .hamburgerLine {
     height: 3px;
-    width: 24px;
+    width: 21px;
     display: block;
     background-color: #555;
+    transition: all 0.3s ease 0s;
 
     &:not(:last-child) {
       margin-bottom: 4px;
@@ -57,7 +58,7 @@
       display: block;
     }
 
-    .navbarToggleShow {
+    .navbarToggleShow .navbar {
       display: block;
       position: absolute;
       left: 0;
@@ -78,6 +79,22 @@
 
       li {
         margin: 12px 0;
+      }
+    }
+
+    .navbarToggleShow .hamburgerLine {
+      &:first-child {
+        transform: rotate(45deg);
+        transform-origin: top left;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+        transform-origin: bottom left;
       }
     }
   }

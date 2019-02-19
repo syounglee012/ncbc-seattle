@@ -43,7 +43,11 @@ class Nav extends React.Component {
     const { showLinks } = this.state;
 
     return (
-      <div className={styles.component}>
+      <div
+        className={`${styles.component} ${
+          showLinks ? styles.navbarToggleShow : ''
+        }`.trim()}
+      >
         <button
           ref={this.setHamburgerMenuRef}
           className={styles.navbarToggle}
@@ -55,12 +59,7 @@ class Nav extends React.Component {
           <span className={styles.hamburgerLine} />
         </button>
 
-        <nav
-          ref={this.setNavRef}
-          className={`${styles.navbar} ${
-            showLinks ? styles.navbarToggleShow : ''
-          }`.trim()}
-        >
+        <nav ref={this.setNavRef} className={styles.navbar}>
           <ul>
             <li>
               <Link to="/about/" onClick={this.handleLinkClick}>
