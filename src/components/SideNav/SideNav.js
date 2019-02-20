@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import styles from './SideNav.module.scss';
 
 const SideNav = ({ pages }) => (
-  <nav>
-    <ul className={styles.component}>
+  <nav className={styles.component}>
+    <ul>
       {pages.map(({ node: page }) => (
         <li key={page.id}>
           <Link

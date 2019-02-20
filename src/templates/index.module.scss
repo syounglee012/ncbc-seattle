@@ -139,12 +139,16 @@
       padding: 0 24px;
     }
 
-    .serviceInfoContainer {
-      flex-direction: column;
+    .serviceInfo {
+      background-image: url('../img/bible.jpg');
     }
 
-    .serviceInfoContent {
-      align-self: flex-end;
+    .serviceInfoContainer {
+      justify-content: flex-end;
+    }
+
+    .imageContainer {
+      display: none;
     }
   }
 }

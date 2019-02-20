@@ -4,13 +4,19 @@
     max-width: 300px;
     font-size: 18px;
     line-height: 2;
-    
+
     a {
       color: #555;
 
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .component {
+      display: none;
     }
   }
 }
