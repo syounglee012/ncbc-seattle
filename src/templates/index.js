@@ -44,7 +44,9 @@ const IndexPage = ({ data }) => {
       </section>
       <section id="service-info" className={styles.serviceInfo}>
         <div className={`container ${styles.serviceInfoContainer}`}>
-          <img className={styles.serviceInfoImage} src={bible} />
+          <div className={styles.imageContainer}>
+            <img className={styles.serviceInfoImage} src={bible} />
+          </div>
           <div className={styles.serviceInfoContent}>
             <h1>{heading}</h1>
             <p>Sundays at {time}</p>
