@@ -86,6 +86,7 @@
 
   .serviceInfoContent {
     flex-shrink: 0;
+    margin-right: 48px;
   }
 
   .keyVerseContent {
@@ -116,6 +117,24 @@
     animation-fill-mode: both;
   }
 
+  @media only screen and (max-width: 992px) {
+    .serviceInfo {
+      background-image: url('../img/bible.jpg');
+    }
+
+    .imageContainer {
+      display: none;
+    }
+
+    .serviceInfoContainer {
+      justify-content: flex-end;
+    }
+
+    .serviceInfoContent {
+      flex-shrink: 1;
+    }
+  }
+
   @media only screen and (max-width: 900px) {
     .header {
       margin-top: 0;
@@ -138,17 +157,15 @@
       margin-top: 0;
       padding: 0 24px;
     }
+  }
 
-    .serviceInfo {
-      background-image: url('../img/bible.jpg');
-    }
-
+  @media only screen and (max-width: 424px) {
     .serviceInfoContainer {
-      justify-content: flex-end;
+      justify-content: flex-start;
     }
 
-    .imageContainer {
-      display: none;
+    .serviceInfoContent {
+      margin-right: 0;
     }
   }
 }

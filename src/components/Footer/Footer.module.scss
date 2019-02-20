@@ -129,46 +129,21 @@
       padding: 16px 0;
     }
 
-    .footerNav {
-      justify-content: space-around;
-      text-align: center;
-    }
-
     .footerNavCol {
       margin-top: 16px;
     }
 
     .socialLinks {
       justify-content: center;
-    }
+      margin-top: 62px;
 
-    .leftCol {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    address,
-    .sbc {
-      text-align: center;
+      a:not(:last-child) {
+        margin-right: 64px;
+      }
     }
   }
 
   @media only screen and (max-width: 424px) {
-    .footerNav {
-      justify-content: space-between;
-      text-align: left;
-    }
-
-    .leftCol {
-      align-items: normal;
-    }
-
-    address,
-    .sbc {
-      text-align: left;
-    }
-
     .logo {
       width: 30px;
     }
