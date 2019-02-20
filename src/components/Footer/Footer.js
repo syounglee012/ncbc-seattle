@@ -14,93 +14,95 @@ const Footer = ({ address, email, phone, instagram }) => {
 
   return (
     <footer className={styles.component}>
-      <div className={`container ${styles.footerContent}`}>
-        <div className={styles.leftCol}>
-          <div className={styles.brandContainer}>
-            <Logo className={styles.logo} />
-            <Link className={styles.brand} to="/">
-              New Covenant Baptist Church
-            </Link>
+      <div className="container">
+        <div className={styles.footerContent}>
+          <div className={styles.leftCol}>
+            <div className={styles.brandContainer}>
+              <Logo className={styles.logo} />
+              <Link className={styles.brand} to="/">
+                New Covenant Baptist Church
+              </Link>
+            </div>
+            <address>
+              <span>
+                {name} ({unit})
+              </span>
+              <span>
+                {streetAddress}, {city}, {state} {zipCode}
+              </span>
+              <a href={`tel:+1${phone}`}>{phone}</a>
+            </address>
+            <p className={styles.sbc}>
+              NCBC adheres to the Statement of Faith adopted by the{' '}
+              <a
+                href="http://www.sbc.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Southern Baptist Convention
+              </a>.
+            </p>
           </div>
-          <address>
-            <span>
-              {name} ({unit})
-            </span>
-            <span>
-              {streetAddress}, {city}, {state} {zipCode}
-            </span>
-            <a href={`tel:+1${phone}`}>{phone}</a>
-          </address>
-          <p className={styles.sbc}>
-            NCBC adheres to the Statement of Faith adopted by the{' '}
-            <a
-              href="http://www.sbc.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Southern Baptist Convention
-            </a>.
+          <div className={styles.rightCol}>
+            <nav className={styles.footerNav}>
+              <div className={styles.footerNavCol}>
+                <h2 className={styles.footerNavTitle}>About</h2>
+                <ul>
+                  <li>
+                    <Link to="/about/who-we-are">Who We Are</Link>
+                  </li>
+                  <li>
+                    <Link to="/about/our-core-values">Our Core Values</Link>
+                  </li>
+                  <li>
+                    <Link to="/about/our-pastor">Our Pastor</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.footerNavCol}>
+                <h2 className={styles.footerNavTitle}>Ministries</h2>
+                <ul>
+                  <li>
+                    <Link to="/ministries/young-adult">Young Adult</Link>
+                  </li>
+                  <li>
+                    <Link to="/ministries/college">College</Link>
+                  </li>
+                  <li>
+                    <Link to="/ministries/children">Children</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.footerNavCol}>
+                <ul>
+                  <li>
+                    <Link to="/devotional" className={styles.footerNavTitle}>
+                      Devotional
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/location" className={styles.footerNavTitle}>
+                      Location
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div className={styles.socialLinks}>
+              <a href="/" target="_blank" rel="noopener noreferrer">
+                <InstagramIcon className={styles.socialLinkIcon} />
+              </a>
+              <a href="/" target="_blank" rel="noopener noreferrer">
+                <EnvelopeIcon className={styles.socialLinkIcon} />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className={styles.copyright}>
+          <p>
+            &copy; {currentYear} {ncbc}. All rights reserved.
           </p>
         </div>
-        <div className={styles.rightCol}>
-          <nav className={styles.footerNav}>
-            <div className={styles.footerNavCol}>
-              <h2 className={styles.footerNavTitle}>About</h2>
-              <ul>
-                <li>
-                  <Link to="/about/who-we-are">Who We Are</Link>
-                </li>
-                <li>
-                  <Link to="/about/our-core-values">Our Core Values</Link>
-                </li>
-                <li>
-                  <Link to="/about/our-pastor">Our Pastor</Link>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.footerNavCol}>
-              <h2 className={styles.footerNavTitle}>Ministries</h2>
-              <ul>
-                <li>
-                  <Link to="/ministries/young-adult">Young Adult</Link>
-                </li>
-                <li>
-                  <Link to="/ministries/college">College</Link>
-                </li>
-                <li>
-                  <Link to="/ministries/children">Children</Link>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.footerNavCol}>
-              <ul>
-                <li>
-                  <Link to="/devotional" className={styles.footerNavTitle}>
-                    Devotional
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/location" className={styles.footerNavTitle}>
-                    Location
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div className={styles.socialLinks}>
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <InstagramIcon className={styles.socialLinkIcon} />
-            </a>
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <EnvelopeIcon className={styles.socialLinkIcon} />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className={styles.copyright}>
-        <p>
-          &copy; {currentYear} {ncbc}. All rights reserved.
-        </p>
       </div>
     </footer>
   );
