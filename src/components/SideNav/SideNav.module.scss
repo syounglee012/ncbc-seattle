@@ -30,6 +30,10 @@
         display: block;
         width: fit-content;
 
+        &:hover {
+          text-decoration: none;
+        }
+
         &.active::before {
           content: '❯ ';
           font-weight: 400;
