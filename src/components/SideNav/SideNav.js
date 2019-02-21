@@ -9,12 +9,7 @@ const SideNav = ({ pages }) => (
     <ul>
       {pages.map(({ node: page }) => (
         <li key={page.id}>
-          <Link
-            to={page.fields.slug}
-            activeStyle={{
-              fontWeight: 600
-            }}
-          >
+          <Link to={page.fields.slug} activeClassName={styles.active}>
             {page.frontmatter.navLinkText}
           </Link>
         </li>

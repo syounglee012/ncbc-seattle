@@ -7,7 +7,7 @@ import SideNav from '../components/SideNav/SideNav';
 import styles from './about.module.scss';
 
 export const AboutPageTemplate = ({ pages, title, content }) => (
-  <Page title="About Us">
+  <Page className={styles.component} title="About Us">
     <Helmet title={`${title} | About Us`} />
     <SideNav pages={pages} />
     <article className={styles.article}>

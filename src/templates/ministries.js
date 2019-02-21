@@ -7,7 +7,7 @@ import SideNav from '../components/SideNav/SideNav';
 import styles from './ministries.module.scss';
 
 export const MinistriesPageTemplate = ({ pages, title, content }) => (
-  <Page title="Ministries">
+  <Page className={styles.component} title="Ministries">
     <Helmet title={`${title} | Ministries`} />
     <SideNav pages={pages} />
     <article className={styles.article}>

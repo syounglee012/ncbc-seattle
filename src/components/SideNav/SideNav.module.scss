@@ -12,11 +12,29 @@
         text-decoration: underline;
       }
     }
+
+    .active {
+      font-weight: 600;
+    }
   }
 
   @media only screen and (max-width: 900px) {
     .component {
-      display: none;
+      margin-bottom: 48px;
+      padding: 8px 0 0 16px;
+      width: auto;
+      max-width: initial;
+
+      a {
+        font-size: 16px;
+        display: block;
+        width: fit-content;
+
+        &.active::before {
+          content: '❯ ';
+          font-weight: 400;
+        }
+      }
     }
   }
 }
