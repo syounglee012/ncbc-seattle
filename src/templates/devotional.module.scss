@@ -7,20 +7,16 @@
     width: 100%;
   }
 
-  .titleWrapper {
-    height: 54px;
-  }
-
   .articleTitle,
   .articleTitleSkeleton {
     font-size: 36px;
     font-weight: 300;
     margin: 0;
-    display: inline-block;
+    display: inline;
   }
 
-  .articleTitle {
-    display: inline;
+  .articleTitleSkeleton {
+    display: inline-block;
   }
 
   .articleTitleSkeleton {
@@ -91,6 +87,13 @@
     background: linear-gradient(to right, #fbfbfb 0, #f4f4f4 50%, #fbfbfb);
     background-size: 1000px;
     animation: loading 2s linear 0s infinite;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .articleTitle,
+    .articleTitleSkeleton {
+      font-size: 32px;
+    }
   }
 }
 
