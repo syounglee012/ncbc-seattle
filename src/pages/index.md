@@ -12,7 +12,7 @@ worshipServiceInfo:
   heading: Worship With Us
   time: 12:30 pm
   location: University Lutheran Church
-  room: Chapel room on the first floor
+  room: In the Sanctuary
   streetAddress: 1604 NE 50th St
   city: Seattle
   state: WA

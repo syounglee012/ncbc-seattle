@@ -52,7 +52,9 @@ const IndexPage = ({ data }) => {
             <p>Sundays at {time}</p>
             <p>
               {location}
-              <br />({room})<br />
+              <br />
+              {room && `(${room})`}
+              {room && <br />}
               {streetAddress}
               <br />
               {city}, {state}, {zipCode}
