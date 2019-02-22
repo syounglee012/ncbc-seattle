@@ -4,7 +4,7 @@ title: Come and Visit Us
 path: /location
 ---
 
-Our weekly Sunday worship service is held at [University Lutheran Church](http://universitylutheranseattle.org/) in the Chapel room on the first floor at 12:30 pm.
+Our weekly Sunday worship service is held at [University Lutheran Church](http://universitylutheranseattle.org/) in the sanctuary at 12:30 pm.
 
 ### Service Time
 
