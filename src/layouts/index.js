@@ -28,6 +28,7 @@ class Layout extends React.Component {
 
   render() {
     const { data, location, children } = this.props;
+    const { edges: pages } = data.allMarkdownRemark;
     const { title, address, phone, email, instagram } = data.site.siteMetadata;
 
     return (
@@ -55,6 +56,7 @@ class Layout extends React.Component {
           phone={phone}
           email={email}
           instagram={instagram}
+          pages={pages}
         />
       </div>
     );
@@ -68,7 +70,7 @@ Layout.propTypes = {
 export default Layout;
 
 export const query = graphql`
-  query SiteMetadataQuery {
+  query LayoutQuery {
     site {
       siteMetadata {
         title
@@ -83,6 +85,24 @@ export const query = graphql`
         phone
         email
         instagram
+      }
+    }
+
+    allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___index] }) {
+      edges {
+        node {
+          id
+          html
+          fields {
+            slug
+          }
+          frontmatter {
+            templateKey
+            title
+            navLinkText
+            index
+          }
+        }
       }
     }
   }

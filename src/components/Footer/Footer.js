@@ -7,10 +7,23 @@ import Logo from '../../img/svg/box-logo.svg';
 
 import styles from './Footer.module.scss';
 
-const Footer = ({ address, email, phone, instagram }) => {
+const Footer = ({ address, email, phone, instagram, pages }) => {
   const currentYear = new Date().getFullYear();
   const ncbc = 'New Covenant Baptist Church';
   const { name, streetAddress, unit, city, state, zipCode } = address;
+
+  const aboutPages = [];
+  const ministriesPages = [];
+
+  pages.forEach(({ node: page }) => {
+    if (page.frontmatter.templateKey === 'about') {
+      aboutPages.push(page);
+    }
+
+    if (page.frontmatter.templateKey === 'ministries') {
+      ministriesPages.push(page);
+    }
+  });
 
   return (
     <footer className={styles.component}>
@@ -48,29 +61,25 @@ const Footer = ({ address, email, phone, instagram }) => {
               <div className={styles.footerNavCol}>
                 <h2 className={styles.footerNavTitle}>About</h2>
                 <ul>
-                  <li>
-                    <Link to="/about/who-we-are">Who We Are</Link>
-                  </li>
-                  <li>
-                    <Link to="/about/our-core-values">Our Core Values</Link>
-                  </li>
-                  <li>
-                    <Link to="/about/our-pastor">Our Pastor</Link>
-                  </li>
+                  {aboutPages.map(page => (
+                    <li key={page.id}>
+                      <Link to={page.fields.slug}>
+                        {page.frontmatter.navLinkText}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className={styles.footerNavCol}>
                 <h2 className={styles.footerNavTitle}>Ministries</h2>
                 <ul>
-                  <li>
-                    <Link to="/ministries/young-adult">Young Adult</Link>
-                  </li>
-                  <li>
-                    <Link to="/ministries/college">College</Link>
-                  </li>
-                  <li>
-                    <Link to="/ministries/children">Children</Link>
-                  </li>
+                  {ministriesPages.map(page => (
+                    <li key={page.id}>
+                      <Link to={page.fields.slug}>
+                        {page.frontmatter.navLinkText}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className={styles.footerNavCol}>
@@ -92,7 +101,7 @@ const Footer = ({ address, email, phone, instagram }) => {
               <a href="/" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon className={styles.socialLinkIcon} />
               </a>
-              <a href="/" target="_blank" rel="noopener noreferrer">
+              <a href={`mailto:${email}`}>
                 <EnvelopeIcon className={styles.socialLinkIcon} />
               </a>
             </div>
@@ -112,7 +121,8 @@ Footer.propTypes = {
   address: PropTypes.object.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-  instagram: PropTypes.string.isRequired
+  instagram: PropTypes.string.isRequired,
+  pages: PropTypes.array
 };
 
 export default Footer;

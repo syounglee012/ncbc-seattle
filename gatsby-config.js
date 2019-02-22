@@ -10,7 +10,7 @@ module.exports = {
       zipCode: 98105
     },
     phone: '(206) 240-9648',
-    email: 'ncbcseattle@gmail.com',
+    email: 'stephenjungncbc@gmail.com',
     serviceTime: '12:30',
     instagram: 'ncbcseattle'
   },
