@@ -98,7 +98,11 @@ const Footer = ({ address, email, phone, instagram, pages }) => {
               </div>
             </nav>
             <div className={styles.socialLinks}>
-              <a href="/" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://www.instagram.com/${instagram}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <InstagramIcon className={styles.socialLinkIcon} />
               </a>
               <a href={`mailto:${email}`}>
