@@ -40,7 +40,11 @@ class Layout extends React.Component {
               name: 'description',
               content: 'Welcome to New Covenant Baptist Church!'
             },
-            { name: 'keywords', content: 'baptist, church, seattle' }
+            {
+              name: 'keywords',
+              content:
+                'baptist, church, seattle, uw, university district, college, student, young adult, ministry'
+            }
           ]}
           link={[
             { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
