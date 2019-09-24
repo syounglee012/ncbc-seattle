@@ -3,8 +3,6 @@ templateKey: events
 path: /events
 title: Welcome Night
 ---
-![KF Welcome Night Flyer](/assets/kf-welcome-night-flyer.jpg)
-
 New Covenant Baptist Church invites you to join us for Welcome Night! There will be free dinner at 7:00 pm followed by worship, games, and prizes.
 
 ### When
@@ -19,3 +17,5 @@ Wednesday, October 2, 2019 @ 7:00 pm
   Seattle, WA 98105
 </address>
 (Entrance from parking lot)
+
+<img src="/assets/kf-welcome-night-flyer.jpg" alt="KF Welcome Night Flyer" width="460px" style="max-width: 100%; padding: 10px; background-color: #fbfbfb; border: 1px solid #ececec; display: block; margin-top: 32px; transform: rotate(-2deg); margin-left: -48px;">
