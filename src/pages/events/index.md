@@ -1,10 +1,11 @@
 ---
 templateKey: events
-title: Welcome Night
 path: /events
+title: Welcome Night
 ---
+![KF Welcome Night Flyer](/assets/kf-welcome-night-flyer.jpg)
 
-New Covenant Baptist Church invites you to join us for Weclome Night! There will be free dinner at 7:00 pm followed by worship, games, and prizes.
+New Covenant Baptist Church invites you to join us for Welcome Night! There will be free dinner at 7:00 pm followed by worship, games, and prizes.
 
 ### When
 
