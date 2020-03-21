@@ -25,6 +25,18 @@ const IndexPage = ({ data }) => {
 
   return (
     <div className={styles.component}>
+      <div className={styles.toast}>
+        <p>
+          We have moved our Sunday worship service online due to COVID-19
+          concerns.{' '}
+          <a
+            href="https://www.youtube.com/watch?v=shybubxLu5w&feature=youtu.be"
+            target="_blank"
+          >
+            Link to service
+          </a>
+        </p>
+      </div>
       <main className={styles.main}>
         <Header className={styles.header} />
         <div className={styles.mainContent}>
