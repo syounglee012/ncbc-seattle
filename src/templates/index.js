@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
             href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
             target="_blank"
           >
-            Link to service
+            Link to the service
           </a>
         </p>
       </div>
