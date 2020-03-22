@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
           We have moved our Sunday worship service online due to COVID-19
           concerns.{' '}
           <a
-            href="https://www.youtube.com/watch?v=shybubxLu5w&feature=youtu.be"
+            href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
             target="_blank"
           >
             Link to service
