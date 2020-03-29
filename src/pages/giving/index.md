@@ -1,17 +1,16 @@
 ---
 templateKey: giving
-title: Expand God's Kingdom Through Your Generosity
 path: /giving
+title: Expand God's Kingdom Through Your Generosity
 ---
-
 You can give tithes and offerings online via [Zelle](https://www.zellepay.com/) or by mailing a check. We appreciate your generosity and looking forward to see what God will do through it!
 
 ### Giving Online
 
 Giving online is available through [Zelle](https://www.zellepay.com/get-started). Once setup, use the following information to send your tithes and offerings:
 
-_Recipient Name_: Berkland Baptist Church
-_Email_: ncbcoffering@gmail.com
+**Recipient Name**: Berkland Baptist Church\
+**Email**: ncbcoffering@gmail.com
 
 ### Mailing A Check
 
