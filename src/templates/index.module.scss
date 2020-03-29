@@ -9,7 +9,7 @@
   }
 
   .toast {
-    height: 72px;
+    padding: 0 24px;
     background-color: #53a1b3;
     display: flex;
     align-items: center;
@@ -29,10 +29,7 @@
 
   /* Header style override */
   .header {
-    position: absolute;
-    top: 0;
-    // margin-top: 44px;
-    margin-top: 72px;
+    margin-top: 44px;
     border-bottom: none;
   }
 
@@ -41,6 +38,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex-grow: 1;
     margin-top: -80px;
   }
 
@@ -149,13 +147,7 @@
 
   @media only screen and (max-width: 900px) {
     .header {
-      // margin-top: 0;
-      margin-top: 120px;
-    }
-
-    .toast {
-      height: 120px;
-      padding: 0 24px;
+      margin-top: 0;
     }
 
     .title {

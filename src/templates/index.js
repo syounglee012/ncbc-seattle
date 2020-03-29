@@ -25,19 +25,19 @@ const IndexPage = ({ data }) => {
 
   return (
     <div className={styles.component}>
-      <div className={styles.toast}>
-        <p>
-          We have moved our Sunday worship service online due to COVID-19
-          concerns.{' '}
-          <a
-            href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
-            target="_blank"
-          >
-            Link to the service
-          </a>
-        </p>
-      </div>
       <main className={styles.main}>
+        <div className={styles.toast}>
+          <p>
+            We have moved our Sunday worship service online due to COVID-19
+            concerns.{' '}
+            <a
+              href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
+              target="_blank"
+            >
+              Link to the service
+            </a>
+          </p>
+        </div>
         <Header className={styles.header} />
         <div className={styles.mainContent}>
           <h1 className={`${styles.title} ${styles.fadeInDown}`}>
