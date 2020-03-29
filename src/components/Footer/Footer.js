@@ -53,7 +53,8 @@ const Footer = ({ address, email, phone, instagram, pages }) => {
                 rel="noopener noreferrer"
               >
                 Southern Baptist Convention
-              </a>.
+              </a>
+              .
             </p>
           </div>
           <div className={styles.rightCol}>
@@ -92,6 +93,11 @@ const Footer = ({ address, email, phone, instagram, pages }) => {
                   <li>
                     <Link to="/location" className={styles.footerNavTitle}>
                       Location
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/giving" className={styles.footerNavTitle}>
+                      Giving
                     </Link>
                   </li>
                 </ul>
