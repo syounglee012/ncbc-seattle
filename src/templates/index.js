@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
               href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
               target="_blank"
             >
-              Link to the service
+              Worship with us!
             </a>
           </p>
         </div>
