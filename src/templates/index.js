@@ -28,14 +28,13 @@ const IndexPage = ({ data }) => {
       <main className={styles.main}>
         <div className={styles.toast}>
           <p>
-            We have moved our Sunday worship service online due to COVID-19
-            concerns.{' '}
+            Join us in-person worship services at 12:30 PM or {' '}
             <a
               href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
               target="_blank"
             >
-              Worship with us!
-            </a>
+              online
+            </a>!
           </p>
         </div>
         <Header className={styles.header} />
