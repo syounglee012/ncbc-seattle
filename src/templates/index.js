@@ -28,9 +28,9 @@ const IndexPage = ({ data }) => {
       <main className={styles.main}>
         <div className={styles.toast}>
           <p>
-            Join us in-person worship services at 12:30 PM or {' '}
+            Join us in-person worship services at 12:00 PM or {' '}
             <a
-              href="https://www.youtube.com/channel/UCQiEWnsAY2Xadds_mZmMYTw"
+              href="https://www.youtube.com/@newcovenantbaptistchurch5257/streams"
               target="_blank"
             >
               online
